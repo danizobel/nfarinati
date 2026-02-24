@@ -7,13 +7,11 @@
   <title>N'Farinati Modern Pizza | Pizzeria a Bagheria (PA) - Asporto & Domicilio</title>
   <meta name="description" content="N'Farinati Modern Pizza a Bagheria (PA): pizze moderne, classiche e gourmet, panini e fritti. Ordina per asporto o consegna. Scopri il menù e contattaci su WhatsApp." />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <meta name="theme-color" content="#2a3324" />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="format-detection" content="telephone=no" />
 
-  <!-- Canonical / URL sito -->
   <link rel="canonical" href="https://share.google/elao13WP5tEQmjuRK" />
 
-  <!-- Open Graph -->
   <meta property="og:locale" content="it_IT" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="N'Farinati Modern Pizza | Bagheria (PA)" />
@@ -21,28 +19,24 @@
   <meta property="og:url" content="https://share.google/elao13WP5tEQmjuRK" />
   <meta property="og:image" content="https://share.google/elao13WP5tEQmjuRK/images/nfarinatilogo.jpg" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="N'Farinati Modern Pizza | Bagheria (PA)" />
   <meta name="twitter:description" content="Pizze moderne, classiche e gourmet. Asporto & consegna. Guarda il menù e contattaci." />
   <meta name="twitter:image" content="https://share.google/elao13WP5tEQmjuRK/images/nfarinatilogo.jpg" />
 
-  <!-- Fonts (coerenti col menù) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@500;700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Local SEO JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "N'Farinati Modern Pizza",
     "image": "https://share.google/elao13WP5tEQmjuRK/images/nfarinatilogo.jpg",
-    "telephone": "+393342699836",
+    "telephone": "+390918432674",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Via P. Togliatti 8",
@@ -50,7 +44,7 @@
       "addressRegion": "PA",
       "addressCountry": "IT"
     },
-    "servesCuisine": ["Pizza", "Fast Food"],
+    "servesCuisine": ["Pizza", "Fast Food", "American"],
     "priceRange": "€€",
     "url": "https://share.google/elao13WP5tEQmjuRK",
     "hasMenu": "https://share.google/elao13WP5tEQmjuRK/menu.html",
@@ -67,21 +61,22 @@
 
   <style>
     :root{
-      --bg-main:#2a3324;
-      --bg-card:#343f2d;
-      --accent-main:#ff2a2a;
-      --accent-hover:#d32f2f;
-      --text-light:#f4f4f0;
-      --text-muted:#a3b19b;
-      --border-light:rgba(244,244,240,.12);
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --bg-main: #ffffff; /* Sfondo bianco */
+      --bg-alt: #f4f6f8; /* Sfondo sezioni alternate grigio chiarissimo */
+      --bg-card: #ffffff; /* Sfondo card bianco puro */
+      --text-dark: #2a3324; /* Verde oliva scuro per testi */
+      --text-muted: #6b7a5d; /* Verde oliva medio per descrizioni */
+      --accent-main: #d32f2f; /* Rosso N'Farinati */
+      --accent-hover: #b71c1c;
+      --border-light: #e2e6dd;
+      --shadow: 0 8px 24px rgba(42, 51, 36, 0.08);
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:'Poppins',sans-serif;
       background:var(--bg-main);
-      color:var(--text-light);
+      color:var(--text-dark);
       min-height:100vh;
     }
     a{color:inherit;text-decoration:none}
@@ -90,7 +85,7 @@
     /* Topbar */
     .topbar{
       position:sticky; top:0; z-index:999;
-      background:rgba(42,51,36,.92);
+      background:rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       border-bottom:1px solid var(--border-light);
     }
@@ -104,17 +99,18 @@
       min-width: 220px;
     }
     .brand img{
-      width:44px; height:44px; border-radius:10px;
-      border:1px solid var(--border-light);
+      width:48px; height:48px; border-radius:12px;
       object-fit:cover;
-      background:rgba(255,255,255,.06);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .brand .name{display:flex; flex-direction:column; line-height:1.05}
+    .brand .name{display:flex; flex-direction:column; line-height:1.1}
     .brand .name strong{
       font-family:'Montserrat',sans-serif;
       letter-spacing:.5px;
-      font-size:.95rem;
+      font-size:1rem;
+      font-weight: 800;
       text-transform:uppercase;
+      color: var(--text-dark);
     }
     .brand .name span{
       color:var(--text-muted);
@@ -129,162 +125,192 @@
       font-family:'Montserrat',sans-serif;
       font-weight:700;
       font-size:.9rem;
-      padding:10px 14px;
+      padding:10px 16px;
       border-radius:999px;
       border:1px solid var(--border-light);
-      background:rgba(255,255,255,.04);
+      background:var(--bg-alt);
+      color: var(--text-dark);
       transition:.2s;
       white-space:nowrap;
     }
-    .nav a:hover{transform:translateY(-1px)}
+    .nav a:hover{transform:translateY(-1px); border-color: var(--accent-main); color: var(--accent-main);}
     .nav a.cta{
       background:var(--accent-main);
       border-color:var(--accent-main);
       color:#fff;
+      box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
     }
-    .nav a.cta:hover{background:var(--accent-hover)}
+    .nav a.cta:hover{background:var(--accent-hover); color: #fff;}
 
     /* Hero */
     .hero{
-      padding:48px 0 22px;
-      border-bottom:3px solid var(--accent-main);
+      background: var(--bg-alt);
+      padding: 60px 0 50px;
+      border-bottom:1px solid var(--border-light);
     }
     .hero-grid{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:22px;
+      gap:30px;
       align-items:center;
     }
-    .since{
-      font-family:'Montserrat',sans-serif;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      font-size:.85rem;
-      opacity:.9;
-      margin-bottom:10px;
+    
+    .hero-logo-large {
+      width: 140px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
+
     h1{
-      font-family:'Pacifico',cursive;
-      font-weight:400;
-      font-size:3.1rem;
-      line-height:1;
-      letter-spacing:1px;
-      margin-bottom:10px;
-    }
-    .subtitle{
       font-family:'Montserrat',sans-serif;
       font-weight:800;
-      letter-spacing:2px;
+      font-size:3.5rem;
+      line-height:1.1;
+      letter-spacing:-1px;
+      margin-bottom:5px;
+      color: var(--text-dark);
+      text-transform: uppercase;
+    }
+    h1 span { color: var(--accent-main); }
+    
+    .subtitle{
+      font-family:'Montserrat',sans-serif;
+      font-weight:700;
+      letter-spacing:3px;
       text-transform:uppercase;
-      font-size:1.2rem;
-      margin-bottom:16px;
+      font-size:1.1rem;
+      color: var(--text-muted);
+      margin-bottom:20px;
     }
     .lead{
-      color:var(--text-muted);
-      font-size:1rem;
+      color:var(--text-dark);
+      font-weight: 500;
+      font-size:1.05rem;
       line-height:1.6;
       max-width: 52ch;
-      margin-bottom:18px;
+      margin-bottom:25px;
     }
     .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
-      padding:14px 16px;
+      padding:14px 20px;
       border-radius:12px;
       font-family:'Montserrat',sans-serif;
       font-weight:800;
-      letter-spacing:.6px;
+      letter-spacing:.5px;
       text-transform:uppercase;
       border:1px solid var(--border-light);
-      background:rgba(255,255,255,.05);
+      background:#fff;
+      color: var(--text-dark);
       transition:.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{transform:translateY(-2px); border-color: var(--accent-main); color: var(--accent-main);}
     .btn.primary{
       background:var(--accent-main);
       border-color:var(--accent-main);
       color:#fff;
+      box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
     }
-    .btn.primary:hover{background:var(--accent-hover)}
+    .btn.primary:hover{background:var(--accent-hover); color:#fff;}
 
     .hero-card{
       background:var(--bg-card);
       border:1px solid var(--border-light);
       border-radius:18px;
-      padding:18px;
+      padding:24px;
       box-shadow: var(--shadow);
     }
     .info-line{
-      display:flex; align-items:flex-start; gap:10px;
-      padding:10px 0;
+      display:flex; align-items:flex-start; gap:15px;
+      padding:12px 0;
       border-bottom:1px solid var(--border-light);
       color:var(--text-muted);
       font-size:.95rem;
-      line-height:1.4;
+      line-height:1.5;
     }
-    .info-line:last-child{border-bottom:0}
+    .info-line:last-child{border-bottom:0; padding-bottom: 0;}
+    .info-line:first-child{padding-top: 0;}
     .info-line i{
       color:var(--accent-main);
-      width:18px;
+      width:20px;
       text-align:center;
-      margin-top:2px;
-      font-size:1.05rem;
+      margin-top:4px;
+      font-size:1.2rem;
     }
 
     /* Sections */
-    section{padding:34px 0}
+    section{padding:50px 0}
     .section-title{
       font-family:'Montserrat',sans-serif;
       font-weight:800;
       letter-spacing:1px;
       text-transform:uppercase;
-      font-size:1.6rem;
-      margin-bottom:16px;
-      border-bottom:2px solid var(--accent-main);
+      font-size:1.8rem;
+      margin-bottom:25px;
+      color: var(--text-dark);
       display:inline-block;
-      padding-bottom:8px;
+      position: relative;
     }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-main);
+      border-radius: 2px;
+    }
+    
     .grid-2{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:18px;
+      gap:24px;
       align-items:stretch;
     }
     .card{
       background:var(--bg-card);
       border:1px solid var(--border-light);
       border-radius:18px;
-      padding:18px;
+      padding:24px;
       box-shadow: var(--shadow);
     }
-    .card p{color:var(--text-muted); line-height:1.7}
+    .card p{color:var(--text-muted); line-height:1.7; font-weight: 500;}
 
     .kpi{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin-top:14px;
+      gap:12px;
+      margin-top:20px;
     }
     .kpi .pill{
       border:1px solid var(--border-light);
       border-radius:14px;
-      padding:12px;
-      background:rgba(0,0,0,.18);
+      padding:15px 12px;
+      background:var(--bg-alt);
+      text-align: center;
+    }
+    .kpi .pill i {
+      font-size: 1.8rem;
+      color: var(--accent-main);
+      margin-bottom: 8px;
     }
     .kpi .pill strong{
       display:block;
       font-family:'Montserrat',sans-serif;
-      letter-spacing:.6px;
+      font-weight: 800;
       text-transform:uppercase;
-      font-size:.78rem;
-      color:var(--text-light);
+      font-size:.85rem;
+      color:var(--text-dark);
     }
     .kpi .pill span{
       display:block;
-      margin-top:6px;
+      margin-top:4px;
       color:var(--text-muted);
-      font-size:.92rem;
+      font-size:.8rem;
     }
 
     /* Maps */
@@ -292,73 +318,76 @@
       overflow:hidden;
       border-radius:18px;
       border:1px solid var(--border-light);
-      background:rgba(0,0,0,.18);
+      background:var(--bg-alt);
       box-shadow: var(--shadow);
       min-height: 360px;
     }
-    iframe{width:100%; height:360px; border:0; display:block}
+    iframe{width:100%; height:100%; min-height: 360px; border:0; display:block}
 
     /* Footer */
     footer{
+      background: var(--bg-alt);
       border-top:1px solid var(--border-light);
-      padding:26px 0 90px;
+      padding:40px 0 90px;
       color:var(--text-muted);
     }
     .footer-inner{
       display:flex; align-items:flex-start; justify-content:space-between;
-      gap:16px; flex-wrap:wrap;
+      gap:20px; flex-wrap:wrap;
     }
     .small-links{display:flex; gap:12px; flex-wrap:wrap}
     .small-links a{
       border:1px solid var(--border-light);
-      padding:10px 12px;
+      padding:10px 16px;
       border-radius:999px;
-      background:rgba(255,255,255,.04);
+      background:#fff;
+      color: var(--text-dark);
       font-family:'Montserrat',sans-serif;
       font-weight:700;
       font-size:.85rem;
+      transition: .2s;
     }
+    .small-links a:hover { border-color: var(--accent-main); color: var(--accent-main); }
 
     /* WhatsApp Floating */
     .wa-fab{
       position:fixed;
-      right:18px;
-      bottom:18px;
+      right:20px;
+      bottom:20px;
       z-index:2000;
-      width:58px;
-      height:58px;
-      border-radius:18px;
+      width:60px;
+      height:60px;
+      border-radius:20px;
       display:flex;
       align-items:center;
       justify-content:center;
       background:#25D366;
       color:#fff;
-      box-shadow: 0 14px 28px rgba(0,0,0,.45);
-      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      border:2px solid #fff;
       transition:.2s;
     }
-    .wa-fab:hover{transform:translateY(-2px)}
-    .wa-fab i{font-size:1.7rem}
+    .wa-fab:hover{transform:translateY(-3px) scale(1.05);}
+    .wa-fab i{font-size:1.8rem}
     .wa-tooltip{
       position:fixed;
-      right:86px;
-      bottom:28px;
+      right:95px;
+      bottom:30px;
       z-index:2000;
-      background:rgba(0,0,0,.55);
-      backdrop-filter: blur(10px);
+      background:#ffffff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       border:1px solid var(--border-light);
-      color:var(--text-light);
-      padding:10px 12px;
+      color:var(--text-dark);
+      font-weight: 600;
+      padding:10px 15px;
       border-radius:12px;
-      font-size:.92rem;
-      max-width: 240px;
+      font-size:.9rem;
     }
 
     @media (max-width: 900px){
       .hero-grid{grid-template-columns:1fr}
       h1{font-size:2.8rem}
       .grid-2{grid-template-columns:1fr}
-      iframe{height:340px}
       .kpi{grid-template-columns:1fr}
       .brand{min-width:auto}
     }
@@ -366,53 +395,44 @@
 </head>
 
 <body>
-  <!-- Topbar -->
   <div class="topbar" role="navigation" aria-label="Navigazione principale">
     <div class="container">
       <div class="topbar-inner">
         <a class="brand" href="#top" aria-label="Vai in cima">
-          <img src="images/nfarinatilogo.jpg" alt="Logo N'Farinati Modern Pizza" width="44" height="44" loading="eager" />
+          <img src="images/logo.jpg" alt="Logo N'Farinati Modern Pizza" width="48" height="48" loading="eager" />
           <div class="name">
             <strong>N'Farinati</strong>
-            <span>Modern Pizza • Bagheria (PA)</span>
+            <span>Modern Pizza</span>
           </div>
         </a>
 
         <div class="nav">
           <a href="#dove-siamo"><i class="fa-solid fa-location-dot"></i> Dove siamo</a>
-          <a href="#contatti"><i class="fa-solid fa-phone"></i> Contatti</a>
-          <a class="cta" href="menu.html"><i class="fa-solid fa-book-open"></i> Apri Menù</a>
+          <a class="cta" href="menu.html"><i class="fa-solid fa-cart-shopping"></i> Ordina Ora</a>
         </div>
       </div>
     </div>
   </div>
 
   <main id="top">
-    <!-- Hero -->
     <header class="hero">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="since">~ SINCE • 2020 ~</div>
-            <div style="color:var(--accent-main);font-size:2rem;margin:-6px 0 6px;">
-              <i class="fa-solid fa-pizza-slice" aria-hidden="true"></i>
-            </div>
-            <h1>N' Farinati</h1>
-            <div class="subtitle">Modern Pizza &amp; More</div>
+            <img src="images/logo.jpg" alt="N'Farinati Logo" class="hero-logo-large">
+            <h1>N' Farinati<br><span>Modern Pizza</span></h1>
+            <div class="subtitle">Since 2020 • Bagheria</div>
 
             <p class="lead">
-              Pizze moderne, classiche e gourmet, fritti e panini.
-              Ordina per <strong>asporto</strong> o <strong>domicilio</strong> e scopri tutte le proposte nel nostro menù digitale.
+              Pizze classiche, americane e gourmet. Panini, Wraps e Philly Steaks.
+              Ordina online per <strong>asporto</strong> o <strong>consegna a domicilio</strong> saltando la fila!
             </p>
 
             <div class="hero-actions">
               <a class="btn primary" href="menu.html" aria-label="Vai alla pagina del menù">
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i> Menù
+                <i class="fa-solid fa-pizza-slice" aria-hidden="true"></i> Apri il Menù
               </a>
-              <a class="btn" href="#dove-siamo" aria-label="Vai alla sezione mappa e indicazioni">
-                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Indicazioni
-              </a>
-              <a class="btn" href="tel:+393342699836" aria-label="Chiama N'Farinati">
+              <a class="btn" href="tel:+390918432674" aria-label="Chiama N'Farinati">
                 <i class="fa-solid fa-phone" aria-hidden="true"></i> Chiama
               </a>
             </div>
@@ -422,22 +442,22 @@
             <div class="info-line">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               <div>
-                <strong style="color:var(--text-light)">Indirizzo</strong><br />
+                <strong style="color:var(--text-dark); font-weight:800; font-family:'Montserrat',sans-serif; text-transform:uppercase;">Indirizzo</strong><br />
                 Via P. Togliatti 8, Bagheria (PA)
               </div>
             </div>
             <div class="info-line">
               <i class="fa-solid fa-phone" aria-hidden="true"></i>
               <div>
-                <strong style="color:var(--text-light)">WhatsApp / Tel</strong><br />
-                <a href="tel:+393342699836" aria-label="Chiama +39 334 269 9836">+39 334 269 9836</a>
+                <strong style="color:var(--text-dark); font-weight:800; font-family:'Montserrat',sans-serif; text-transform:uppercase;">Telefono</strong><br />
+                <a href="tel:+390918432674" aria-label="Chiama 091 8432674">091 8432674</a>
               </div>
             </div>
             <div class="info-line">
               <i class="fa-regular fa-clock" aria-hidden="true"></i>
               <div>
-                <strong style="color:var(--text-light)">Orari</strong><br />
-                Mar–Dom 18:30–23:30 <span style="color:var(--text-muted)">(Lunedì chiusi)</span>
+                <strong style="color:var(--text-dark); font-weight:800; font-family:'Montserrat',sans-serif; text-transform:uppercase;">Orari di Apertura</strong><br />
+                Mar–Dom 18:30–23:30 <br><span style="color:var(--accent-main); font-size: 0.85rem; font-weight: 600;">(Lunedì chiusi)</span>
               </div>
             </div>
           </aside>
@@ -445,45 +465,51 @@
       </div>
     </header>
 
-    <!-- Punti di forza -->
     <section aria-label="Punti di forza">
       <div class="container">
-        <h2 class="section-title">Modern Pizza, fatta bene</h2>
+        <h2 class="section-title">La nostra filosofia</h2>
 
         <div class="grid-2">
           <div class="card">
             <p>
-              Impasti, topping e combinazioni pensate per un’esperienza “modern”.
-              Dal grande classico alla gourmet: scegli, ordina e goditela.
+              Tornato dalle strade del New Jersey, Franky porta il cuore e l'anima della tradizione italo-americana nella sua cucina. Impasti, topping e combinazioni pensate per un’esperienza <strong>"Modern Pizza"</strong> indimenticabile.
             </p>
 
             <div class="kpi" aria-label="Servizi">
-              <div class="pill"><strong>Asporto</strong><span>Ordina e ritira</span></div>
-              <div class="pill"><strong>Domicilio</strong><span>Consegna in zona</span></div>
-              <div class="pill"><strong>Menù digitale</strong><span>Chiaro e veloce</span></div>
+              <div class="pill">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <strong>Asporto</strong>
+                <span>Ordina e ritira al volo</span>
+              </div>
+              <div class="pill">
+                <i class="fa-solid fa-motorcycle"></i>
+                <strong>Domicilio</strong>
+                <span>Consegna calda a casa</span>
+              </div>
+              <div class="pill">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <strong>Menù Digitale</strong>
+                <span>Personalizza l'ordine</span>
+              </div>
             </div>
           </div>
 
           <div class="card" id="contatti">
-            <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">
-              Contatti rapidi
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px; color: var(--text-dark);">
+              Prenota Subito
             </h3>
-            <p>Vuoi info su ordine e consegna? Scrivici su WhatsApp o chiamaci.</p>
+            <p>Tramite il nostro menù digitale puoi comporre la tua pizza, scegliere gli extra e inviare l'ordine direttamente in cucina. Paga online o alla consegna!</p>
 
-            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;">
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
               <a class="btn primary" href="menu.html" aria-label="Apri il menù digitale">
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i> Menù
+                <i class="fa-solid fa-rocket" aria-hidden="true"></i> Inizia Ordine
               </a>
 
               <a class="btn"
-                 href="https://wa.me/393342699836?text=Ciao%20N%27Farinati!%20Vorrei%20informazioni%20sull%27ordine."
+                 href="https://wa.me/390918432674?text=Ciao%20N%27Farinati!%20Vorrei%20informazioni."
                  target="_blank" rel="noopener"
                  aria-label="Contatta su WhatsApp">
-                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-              </a>
-
-              <a class="btn" href="tel:+393342699836" aria-label="Chiama +39 334 269 9836">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i> Chiama
+                <i class="fa-brands fa-whatsapp" aria-hidden="true" style="color: #25D366;"></i> Chat WhatsApp
               </a>
             </div>
           </div>
@@ -491,31 +517,26 @@
       </div>
     </section>
 
-    <!-- Dove siamo -->
-    <section id="dove-siamo" aria-label="Mappa e indicazioni">
+    <section id="dove-siamo" aria-label="Mappa e indicazioni" style="background: var(--bg-alt); border-top: 1px solid var(--border-light);">
       <div class="container">
         <h2 class="section-title">Dove siamo</h2>
 
         <div class="grid-2">
           <div class="card">
-            <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px; color: var(--text-dark);">
               Vieni a trovarci
             </h3>
             <p>
-              Siamo a <strong>Bagheria (PA)</strong>, in <strong>Via P. Togliatti 8</strong>.
-              Apri la mappa per il percorso.
+              Siamo a <strong>Bagheria (PA)</strong>, in <strong>Via P. Togliatti 8</strong>.<br>
+              <span style="font-size: 0.9rem;">(Angolo Via Papa Giovanni XXIII, dietro il supermercato).</span>
             </p>
 
-            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;">
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
               <a class="btn primary"
-                 href="https://www.google.com/maps/search/?api=1&query=Via%20P.%20Togliatti%208%2C%20Bagheria%20PA"
+                 href="https://maps.google.com/?q=Via+P.+Togliatti+8,+Bagheria+PA"
                  target="_blank" rel="noopener"
                  aria-label="Apri Google Maps con indicazioni">
-                <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Indicazioni
-              </a>
-
-              <a class="btn" href="menu.html" aria-label="Vai al menù digitale">
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i> Menù
+                <i class="fa-solid fa-location-arrow" aria-hidden="true"></i> Apri Navigatore
               </a>
             </div>
           </div>
@@ -525,23 +546,22 @@
               title="Google Maps - N'Farinati Modern Pizza"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Via%20P.%20Togliatti%208%2C%20Bagheria%20PA&output=embed">
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3138.932467382216!2d13.4996397!3d38.0776472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e7a9e336b9db%3A0x6b4f74d75f28f8f!2sVia%20Palmiro%20Togliatti%2C%208%2C%2090011%20Bagheria%20PA!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit">
             </iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-inner">
           <div>
-            <div style="font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);">
+            <div style="font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-dark); font-size: 1.1rem;">
               N'Farinati Modern Pizza
             </div>
             <div style="margin-top:8px;">
-              Via P. Togliatti 8, Bagheria (PA) • <a href="tel:+393342699836">+39 334 269 9836</a>
+              Via P. Togliatti 8, Bagheria (PA) • <a href="tel:+390918432674" style="font-weight: 600;">091 8432674</a>
             </div>
             <div style="margin-top:6px;">
               Mar–Dom 18:30–23:30 • Lunedì chiusi
@@ -549,23 +569,21 @@
           </div>
 
           <div class="small-links" aria-label="Link rapidi">
-            <a href="menu.html"><i class="fa-solid fa-book-open"></i> Menù</a>
+            <a href="menu.html"><i class="fa-solid fa-pizza-slice"></i> Menù Ordini</a>
             <a href="#dove-siamo"><i class="fa-solid fa-location-dot"></i> Mappa</a>
-            <a href="#contatti"><i class="fa-solid fa-phone"></i> Contatti</a>
           </div>
         </div>
 
-        <div style="margin-top:18px;font-size:.88rem;">
+        <div style="margin-top:25px;font-size:.85rem; border-top: 1px solid var(--border-light); padding-top: 15px;">
           © <span id="year"></span> N'Farinati Modern Pizza. Tutti i diritti riservati.
         </div>
       </div>
     </footer>
   </main>
 
-  <!-- WhatsApp Floating Button -->
   <div class="wa-tooltip" aria-hidden="true">Scrivici su WhatsApp</div>
   <a class="wa-fab"
-     href="https://wa.me/393342699836?text=Ciao%20N%27Farinati!%20Vorrei%20ordinare%20o%20avere%20info."
+     href="https://wa.me/390918432674?text=Ciao%20N%27Farinati!%20Vorrei%20informazioni."
      target="_blank" rel="noopener"
      aria-label="Contatta N'Farinati su WhatsApp">
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
