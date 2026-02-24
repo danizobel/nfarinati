@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>N'Farinati Modern Pizza - Menu</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@500;700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #2a3324; /* Verde Oliva Scuro del Logo */
+            --bg-card: #343f2d; /* Verde Oliva leggermente più chiaro */
+            --accent-main: #ff2a2a; /* Rosso del logo */
+            --accent-hover: #d32f2f;
+            --text-light: #f4f4f0; /* Bianco panna */
+            --text-muted: #a3b19b; /* Verdino chiaro per i testi secondari */
+            --border-light: rgba(244, 244, 240, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg-main); color: var(--text-light); padding-bottom: 120px; min-height: 100vh; }
+
+        header { background: var(--bg-main); text-align: center; padding: 40px 20px 30px; border-bottom: 3px solid var(--accent-main); }
+        .logo-since { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: var(--text-light); letter-spacing: 3px; margin-bottom: 5px; text-transform: uppercase; }
+        header h1 { font-family: 'Pacifico', cursive; font-size: 3.5rem; color: var(--text-light); margin-bottom: -5px; line-height: 1; letter-spacing: 1px; font-weight: 400;}
+        header h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: var(--text-light); margin-bottom: 25px; font-weight: 800; letter-spacing: 2px;}
+        
+        .restaurant-info { display: inline-block; background: var(--bg-card); border: 1px solid var(--border-light); padding: 15px 25px; border-radius: 8px; text-align: left; }
+        .info-line { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; display: flex; align-items: center; gap: 10px;}
+        .info-line:last-child { margin-bottom: 0; }
+        .info-line i { color: var(--accent-main); width: 16px; text-align: center; font-size: 1.1rem;}
+
+        .filters-container { display: flex; overflow-x: auto; gap: 10px; padding: 15px 20px; position: sticky; top: 0; background: rgba(42, 51, 36, 0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--border-light); }
+        .filters-container::-webkit-scrollbar { display: none; }
+        .filter-btn { background: var(--bg-card); color: var(--text-light); border: 1px solid var(--border-light); padding: 10px 20px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; white-space: nowrap; cursor: pointer; transition: all 0.3s ease; font-family: 'Montserrat', sans-serif;}
+        .filter-btn.active { background: var(--accent-main); color: #fff; border-color: var(--accent-main); }
+        
+        .menu-container { padding: 0 15px; max-width: 900px; margin: 0 auto;}
+        .category-section { animation: fadeIn 0.4s ease-in-out; display: block; }
+        .category-section.hidden { display: none; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .category-title { font-family: 'Montserrat', sans-serif; padding: 30px 5px 10px; font-size: 1.8rem; font-weight: 800; color: var(--text-light); text-transform: uppercase; border-bottom: 2px solid var(--accent-main); margin-bottom: 20px; letter-spacing: 1px;}
+        
+        .menu-item { background-color: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 20px; margin: 15px 0; display: flex; flex-direction: column; transition: transform 0.2s;}
+        .menu-item:active { transform: scale(0.98); }
+        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .item-name { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-light); line-height: 1.2; padding-right: 10px; text-transform: uppercase;}
+        .item-price { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--accent-main); white-space: nowrap;}
+        .item-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 15px; font-weight: 400; flex-grow: 1;}
+        
+        .controls { display: flex; align-items: center; justify-content: flex-end; gap: 15px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-light); }
+        .btn-control { background: rgba(255,255,255,0.05); color: var(--text-light); border: 1px solid var(--border-light); border-radius: 8px; width: 36px; height: 36px; font-size: 1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s;}
+        .btn-control:active { background: var(--accent-main); color: #fff; border-color: var(--accent-main);}
+        .qty { font-weight: 700; font-size: 1.2rem; min-width: 25px; text-align: center; color: var(--text-light);}
+
+        .cart-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-card); padding: 15px 20px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid var(--accent-main); transform: translateY(120%); transition: transform 0.3s ease; z-index: 1000; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.3);}
+        .cart-footer.visible { transform: translateY(0); }
+        .cart-total { font-size: 1.4rem; font-weight: 900; color: var(--text-light); font-family: 'Montserrat', sans-serif;}
+        .cart-total span { display: block; font-size: 0.75rem; color: var(--accent-main); text-transform: uppercase; letter-spacing: 1px;}
+        .btn-checkout { background: var(--accent-main); color: #fff; border: none; padding: 14px 24px; border-radius: 8px; font-weight: 800; font-size: 1rem; display: flex; align-items: center; gap: 8px; cursor: pointer; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+
+        .checkout-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .checkout-modal.active { display: flex; }
+        .checkout-content { background: var(--bg-main); border-radius: 16px; padding: 30px 20px; width: 100%; max-width: 450px; position: relative; max-height: 90vh; overflow-y: auto; border: 1px solid var(--border-light); }
+        .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; }
+        .checkout-content h3 { font-family: 'Montserrat', sans-serif; color: var(--text-light); margin-bottom: 25px; font-weight: 800; font-size: 1.8rem; text-transform: uppercase; border-bottom: 2px solid var(--accent-main); padding-bottom: 10px; display: inline-block;}
+        
+        .type-toggle { display: flex; gap: 10px; margin-bottom: 20px; background: rgba(0,0,0,0.2); padding: 5px; border-radius: 10px; border: 1px solid var(--border-light);}
+        .type-toggle label { flex: 1; text-align: center; padding: 12px; border-radius: 8px; cursor: pointer; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: 0.3s; font-family: 'Montserrat', sans-serif;}
+        .type-toggle input[type="radio"] { display: none; }
+        .type-toggle label.active { background: var(--accent-main); color: #fff; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; font-family: 'Montserrat', sans-serif;}
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border-radius: 8px; background: var(--bg-card); border: 1px solid var(--border-light); color: var(--text-light); outline: none; font-size: 1rem; appearance: none; -webkit-appearance: none; font-family: 'Poppins', sans-serif;}
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent-main); }
+        .form-group select option { background: var(--bg-card); color: var(--text-light); }
+        
+        .btn-confirm-order { width: 100%; background: var(--accent-main); color: white; border: none; padding: 18px; border-radius: 8px; font-size: 1.1rem; font-weight: 800; cursor: pointer; margin-top: 15px; display: flex; justify-content: center; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif;}
+        .btn-confirm-order.cash { background: #4caf50; }
+
+        @media (min-width: 768px) {
+            .filters-container { justify-content: center; flex-wrap: wrap; overflow-x: visible; padding: 20px; }
+            .category-section { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .category-title { grid-column: span 2; font-size: 2.2rem; }
+            .menu-item { margin: 0; height: 100%; }
+            .cart-footer { justify-content: center; gap: 50px; padding: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-since">~ SINCE &bull; 2020 ~</div>
+            <div style="color: var(--accent-main); font-size: 2rem; margin-top: -10px;"><i class="fa-solid fa-pizza-slice"></i></div>
+            <h1>'N Farinati</h1>
+            <h2>MODERN PIZZA</h2>
+            
+            <div class="restaurant-info">
+                <div class="info-line"><i class="fa-solid fa-location-dot"></i> Via P. Togliatti 8, Bagheria (PA)</div>
+                <div class="info-line"><i class="fa-solid fa-phone"></i> 091 8432674</div>
+                <div class="info-line"><i class="fa-regular fa-clock"></i> Mar-Dom 18:30 - 23:30 (Lunedì Chiusi)</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="filters-container" id="filters-container"></div>
+    <div id="menu-container" class="menu-container"></div>
+
+    <div class="cart-footer" id="cart-footer">
+        <div class="cart-total"><span>Totale Ordine</span><div id="total-price">0,00 €</div></div>
+        <button class="btn-checkout" onclick="openCheckout()"><i class="fa-solid fa-cart-shopping"></i> Paga Ora</button>
+    </div>
+
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-content">
+            <i class="fa-solid fa-xmark close-modal" onclick="closeCheckout()"></i>
+            <h3>Completa l'Ordine</h3>
+            
+            <div id="dati-cliente-form">
+                <div class="type-toggle">
+                    <label id="lbl-takeaway" class="active">
+                        <input type="radio" name="order-type" value="takeaway" checked onchange="toggleOrderType()">
+                        🛍️ Asporto
+                    </label>
+                    <label id="lbl-delivery">
+                        <input type="radio" name="order-type" value="delivery" onchange="toggleOrderType()">
+                        🛵 Domicilio
+                    </label>
+                </div>
+
+                <div class="form-group"><label>Nome e Cognome *</label><input type="text" id="cust-name" required></div>
+                <div class="form-group"><label>Telefono *</label><input type="tel" id="cust-phone" required></div>
+				
+                <div class="form-group">
+                    <label id="orario-label" for="orario-consegna">Orario di Ritiro *</label>
+                    <select id="orario-consegna" name="orario" required></select>
+                </div>
+
+                <div id="delivery-fields" style="display: none;">
+                    <div class="form-group">
+                        <label>Indirizzo (Via, Civico, Info) *</label>
+                        <input type="text" id="cust-address" placeholder="Es. Via Roma 10, Citofono Rossi">
+                    </div>
+                </div>
+                
+                <div class="form-group" style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; border: 1px solid var(--border-light);">
+                    <label>Metodo di Pagamento *</label>
+                    <select id="metodo-pagamento" name="metodo-pagamento" onchange="cambiaBottonePagamento()">
+                        <option value="contanti">💵 Contanti (alla consegna/ritiro)</option>
+                        <option value="carta">💳 Carta di Credito (Nexi)</option>
+                    </select>
+                </div>
+
+                <div class="form-group"><label>Note per la cucina</label><textarea id="cust-notes" rows="2" placeholder="Allergie o richieste particolari..."></textarea></div>
+				
+                <button class="btn-confirm-order cash" onclick="sendOrderWithDetails()" id="pay-btn">
+                    <i class="fa-solid fa-check-to-slot"></i> Conferma Ordine
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuData = [
+            {
+                id: "appetizers",
+                category: "Appetizers & Fries",
+                items: [
+                    { id: 1, name: "French Fries", desc: "Patatine fritte classiche", price: 3.00 },
+                    { id: 2, name: "Cheese Fries", desc: "Patatine fritte con formaggio fuso cheddar", price: 4.00 },
+                    { id: 3, name: "Franky Fries", desc: "Patatine fritte, bacon, sottilette, mozzarella, ranch, cheddar", price: 5.50 },
+                    { id: 4, name: "Seasoned Fries", desc: "Patate fritte con buccia e aromi", price: 4.00 },
+                    { id: 5, name: "Sweet Potato Fries", desc: "Patate dolci fritte", price: 4.50 },
+                    { id: 6, name: "Mozzarella Sticks", desc: "6 pz. Listelle di mozzarella home made, panata e fritta", price: 4.50 },
+                    { id: 7, name: "Onion Rings", desc: "Anelli di cipolla fritta", price: 3.50 },
+                    { id: 8, name: "Crostini di Tuma", desc: "6 pz. Crostini di tuma locale, panata e fritta", price: 5.50 },
+                    { id: 9, name: "Jalapeños Red Hot", desc: "6 pz. Fritti, ripieni al formaggio", price: 6.00 },
+                    { id: 10, name: "Chicken Nuggets", desc: "8 pz. Birbe di pollo", price: 5.00 },
+                    { id: 11, name: "Chicken Wings", desc: "6 pz. Alette di pollo piccanti", price: 5.00 },
+                    { id: 12, name: "Chicken Fingers", desc: "8 pz. Straccetti di pollo croccanti", price: 5.50 },
+                    { id: 13, name: "Combo Platter", desc: "2pz Ck wings, 2pz Mozz Sticks, 2pz Nuggets, 2pz onion rings, patatine", price: 5.50 },
+                    { id: 14, name: "Wurstel alla Griglia", desc: "Wurstel grigliati con olio, limone, sale, pepe, origano", price: 4.00 },
+                    { id: 15, name: "Misto Caldo", desc: "4 Panelle, 4 crocchette, patatine", price: 5.00 },
+                    { id: 16, name: "Crazy Fries", desc: "Patatine, wurstel fritti, bacon, salsa rosa, ranch, mozz, sottilette, cheddar", price: 6.00 },
+                    { id: 17, name: "Chips di patate fresche", desc: "Patate fresche tagliate a sfoglia fritte", price: 2.00 }
+                ]
+            },
+            {
+                id: "wraps",
+                category: "Wraps",
+                items: [
+                    { id: 18, name: "Chicken Ceasar Wrap", desc: "Pollo alla griglia marinato, lattuga, ceasar dressing, pecorino", price: 7.50 },
+                    { id: 19, name: "West Palm Beach Wrap", desc: "Pollo fritto, mozz. fior di latte, lattuga, pomodorini, avocado, mayonese", price: 8.50 },
+                    { id: 20, name: "N.Y. Giants Wrap", desc: "Pollo fritto, cheddar, bacon, rucola, carote, cipolle, ranch dressing", price: 8.50 },
+                    { id: 21, name: "Tom's River Wrap", desc: "Pollo fritto, chips zucchine, chipotle mayo, avocado, lattuga, patate spicchi", price: 9.50 },
+                    { id: 22, name: "Belmar Wrap", desc: "Hamburger vitello, cheddar, bacon, onion rings, crocchè, honey mustard, lattuga", price: 10.00 },
+                    { id: 23, name: "Chicken Chips Wrap", desc: "Pollo fritto, chips patate, bacon, salsa cheddar, ranch, rucola", price: 8.50 },
+                    { id: 24, name: "Chicken Quesadillas", desc: "Pollo alla griglia, cheddar, lattuga, pomodoro", price: 7.50 },
+                    { id: 25, name: "Chicago Wrap", desc: "Pollo fritto, bacon croccante, cheddar, lattuga, honey mustard", price: 8.50 },
+                    { id: 26, name: "Hip Hop Wrap", desc: "Pollo fritto, mozz sticks, onion rings, bacon, lattuga, mayo bbq, cheddar", price: 9.50 },
+                    { id: 27, name: "High Class Wrap", desc: "Prosc. Parma, grana, rucola, pomodorini, mozz bufala, glassa balsamica", price: 8.00 },
+                    { id: 28, name: "Buffalo Style Wrap", desc: "Pollo fritto buffalo piccante, emmenthal, lattuga, pomodori, blue cheese", price: 8.50 },
+                    { id: 29, name: "BBQ Chicken Wrap", desc: "Pollo fritto bbq, patatine fritte, mozzarella, lattuga, cipolle", price: 8.50 },
+                    { id: 30, name: "Pump It Up Wrap", desc: "Pollo griglia, spinaci, funghi, mozzarella, radicchio, avocado, salsa yogurt", price: 8.00 },
+                    { id: 31, name: "Burger Wrap", desc: "Hamburger vitello, bacon, cheddar, cipolle, lattuga, pomodoro, salsa rosa", price: 9.50 },
+                    { id: 32, name: "Baby Wrap", desc: "Prosciutto cotto, mozzarella, patatine fritte", price: 5.50 }
+                ]
+            },
+            {
+                id: "philly",
+                category: "Philly Cheese Steaks",
+                items: [
+                    { id: 33, name: "Cheese Steak", desc: "Carne philly style, mozzarella filante", price: 7.00 },
+                    { id: 34, name: "Original Philly Sandwich", desc: "Carne philly style, mozz. filante, peperoni, cipolle, funghi", price: 8.00 },
+                    { id: 35, name: "California Style", desc: "Carne philly style, mozz filante, lattuga, pomodoro, mayo", price: 8.00 },
+                    { id: 36, name: "Cheese Steak on Steroids", desc: "Carne philly, cheddar, funghi, peperoni, cipolle, patatine, bbq mayo", price: 8.00 },
+                    { id: 37, name: "Bacon Ranch", desc: "Carne philly, cheddar, cipolla, bacon, ranch dressing, lattuga, pomodoro", price: 8.00 },
+                    { id: 38, name: "Nfari-Steak Sandwich", desc: "Carne philly, sottiletta, bacon, funghi, cipolle, rucola, pomodoro", price: 8.00 },
+                    { id: 39, name: "Devil Melt", desc: "Carne philly, emmenthal, salsa buffalo, salamino picc, lattuga, pomodoro", price: 8.00 },
+                    { id: 40, name: "Southern Style", desc: "Carne philly, mozz, peperoni, funghi, cipolle fritte croccanti, bbq sauce", price: 8.00 }
+                ]
+            },
+            {
+                id: "burgers",
+                category: "American Hamburgers",
+                items: [
+                    { id: 41, name: "Nfarinati Original Burger", desc: "Burger, chipotle mayo, avocado, bacon, funghi, onion rings, rucola, mozz.", price: 8.50 },
+                    { id: 42, name: "The Lo Galbo's Burger", desc: "Burger, cheddar, salsa rosa, lattuga, pomodoro", price: 7.50 },
+                    { id: 43, name: "Sinaloa Mexico Burger", desc: "Burger, bruschetta, salsa buffalo, salamino piccante, avocado, lattuga, cheddar", price: 8.00 },
+                    { id: 44, name: "New York Times Burger", desc: "Burger, bacon, anelli di cipolla, salsa bbq, sottilette, lattuga", price: 8.50 },
+                    { id: 45, name: "Good Fellas Burger", desc: "Burger, mozzarella, pomodoro, lattuga, spinaci, bacon, funghi, chipotle mayo", price: 8.00 },
+                    { id: 46, name: "Jersey Boy Burger", desc: "Burger, peperoni, cipolla, funghi, emmenthal, lattuga, pomodoro", price: 8.50 },
+                    { id: 47, name: "Country Burger", desc: "Burger vitello, emmenthal, carote, chips zucchine, chipotle mayo, rucola", price: 9.50 },
+                    { id: 48, name: "Greta Burger", desc: "Burger, avocado, funghi, cipolle, cheddar, rucola, chipotle mayo", price: 9.00 },
+                    { id: 49, name: "G.B. Style Burger", desc: "Burger, emmenthal, salsa rosa, pomodorini, lattuga, cipolle", price: 8.00 },
+                    { id: 50, name: "Fat Bastard Burger", desc: "Doppio burger, sottiletta, onion rings, bacon, cheddar, bbq mayo, lattuga", price: 12.00 },
+                    { id: 51, name: "Pistacchino Burger", desc: "Burger vitello, mortadella, burrata, radicchio, pesto pistacchio (con patatine)", price: 12.00 }
+                ]
+            },
+            {
+                id: "panini",
+                category: "Panini Americani",
+                items: [
+                    { id: 52, name: "California Chicken", desc: "Pollo fritto, lattuga, pomodoro, cipolla rossa, mayo", price: 7.50 },
+                    { id: 53, name: "Chicken B.L.T.", desc: "Pollo fritto, bacon, lattuga, pomodoro", price: 7.50 },
+                    { id: 54, name: "Chicken Parm", desc: "Pollo fritto, salsa pomodoro, mozz filante, pecorino romano, basilico", price: 7.50 },
+                    { id: 55, name: "Chicken Bacon Ranch", desc: "Pollo fritto, bacon croccante, salsa ranch, lattuga, pomodoro", price: 8.00 },
+                    { id: 56, name: "Fat Bastard Sandwich", desc: "Pollo fritto, bacon, salamino piccante, patatine, mozz sticks, bbq, cheddar", price: 10.00 },
+                    { id: 57, name: "Hot Dog Maxi", desc: "Hot dog, mostarda, ketchup", price: 5.00 },
+                    { id: 58, name: "Italian Hot Dog", desc: "Wurstel arrostiti, cipolle, peperoni, patatine fritte, cheddar", price: 6.00 },
+                    { id: 59, name: "Grilled Chicken", desc: "Pollo grigliato, cipolla, peperoni, funghi, emmenthal, rucola", price: 8.50 },
+                    { id: 60, name: "Heavy Hitter", desc: "Pollo fritto buffalo, cipolle, funghi, emmenthal, ranch, lattuga, pomodoro", price: 9.50 },
+                    { id: 61, name: "Cardiac Arrest", desc: "Chicken fingers, mozz sticks, onion rings, patatine, ranch, sottiletta, buffalo", price: 10.00 },
+                    { id: 62, name: "'Nfarinati Special", desc: "Mortadella, bufala, crema cipolla caramellata, radicchio, granella pistacchio", price: 7.50 }
+                ]
+            },
+            {
+                id: "salads",
+                category: "Salads",
+                items: [
+                    { id: 63, name: "Cesar Palace Salad", desc: "Lattuga, pollo grigliato, bacon, ceasar dressing, pecorino stagionato", price: 11.00 },
+                    { id: 64, name: "Los Angeles Salad", desc: "Lattuga, crudo Parma, pomodorini, chips zucchine, bufala, pesto e granella pistacchio", price: 12.00 },
+                    { id: 65, name: "Midland Salad", desc: "Lattuga, pollo grigliato, pomodorini, avocado, scaglie grana, ciliegino, salsa yogurt", price: 11.00 },
+                    { id: 66, name: "Finest Salad", desc: "Lattuga, rucola, radicchio, grana, bresaola, mandorle, funghi, glassa balsamica", price: 12.00 },
+                    { id: 67, name: "Crispy Salad", desc: "Lattuga, pollo croccante, crispy bacon, cipolla rossa, avocado, ciliegino, ranch", price: 12.00 },
+                    { id: 68, name: "Burger Salad", desc: "Lattuga, burger vitello, crispy bacon, funghi, pomodorini, ciliegino, ceasar", price: 11.00 }
+                ]
+            },
+            {
+                id: "pizze-classiche",
+                category: "Pizze Classiche",
+                items: [
+                    { id: 69, name: "Margherita", desc: "Pomodoro, mozzarella fior di latte", price: 5.50 },
+                    { id: 70, name: "Margherita 1983", desc: "Pomodoro giallo, bufala, pesto pistacchio, mandorle, basilico", price: 8.50 },
+                    { id: 71, name: "Margherita 23", desc: "Pomodoro, provola affumicata DOP, pesto e granella nocciole, burrata, basilico", price: 10.00 },
+                    { id: 72, name: "Naples", desc: "Pomodoro, mozzarella, acciughe", price: 6.00 },
+                    { id: 73, name: "4 Gusti", desc: "Pomodoro, mozz, prosc. cotto, wurstel, funghi, origano", price: 7.50 },
+                    { id: 74, name: "Capricciosa", desc: "Pomodoro, mozz, prosc. cotto, wurstel, carciofi, funghi, olive", price: 8.00 },
+                    { id: 75, name: "San Francesco", desc: "Pomodoro, mozz, crudo di Parma, scaglie grana, rucola", price: 8.50 },
+                    { id: 76, name: "Orto Bio", desc: "Mozzarella, polpa pomodoro, chips zucchine, melanzane fritte, ricotta, mandorle", price: 8.00 },
+                    { id: 77, name: "Veggy", desc: "Pomodoro, mozzarella, funghi, cipolle, peperoni, olive, melanzane, spinaci", price: 8.00 },
+                    { id: 78, name: "Bresa-Hola Pizza", desc: "Mozzarella, bresaola punta d'anca, rucola, scaglie grana", price: 9.50 },
+                    { id: 79, name: "Don Calogero", desc: "Pomodoro, mozzarella, salamino piccante, salsiccia", price: 7.50 },
+                    { id: 80, name: "Eggplant Parmigiana", desc: "Pomodoro, mozzarella, melanzane fritte, pecorino romano, ricotta, basilico", price: 7.50 },
+                    { id: 81, name: "4 Cheese", desc: "Mozzarella, provoletta, ricotta, pecorino, gorgonzola", price: 7.50 },
+                    { id: 82, name: "Pataboom", desc: "Pomodoro, mozzarella, patatine fritte", price: 6.50 },
+                    { id: 83, name: "Aspra Mare", desc: "Pomodoro, mozzarella, tonno, cipolle, olive verdi", price: 7.50 },
+                    { id: 84, name: "Sfincione Modern Pizza", desc: "Crema cipolle caramellate, mozz, acciughe, pecorino, tuma fritta, ricotta", price: 8.00 },
+                    { id: 85, name: "Diavola", desc: "Pomodoro, mozzarella, salamino piccante", price: 7.00 }
+                ]
+            },
+            {
+                id: "pizze-americane",
+                category: "Pizze Americane",
+                items: [
+                    { id: 86, name: "Greenfield", desc: "4 formaggi, funghi, bacon. Uscita: pesto e granella pistacchi", price: 9.00 },
+                    { id: 87, name: "Chicken Ceasar Crust", desc: "Mozzarella, pollo griglia, lattuga romana, pecorino, ceasar dressing", price: 8.00 },
+                    { id: 88, name: "Only Meat Lover", desc: "Pomodoro, mozz, salsiccia, prosc. cotto, salamino picc., bacon, wurstel", price: 9.00 },
+                    { id: 89, name: "Chicken Parm Pizza", desc: "Pomodoro, mozz, pollo fritto, pecorino romano, basilico", price: 8.00 },
+                    { id: 90, name: "BBQ Chicken Pizza", desc: "Mozzarella, pollo al bbq, cheddar cheese", price: 8.00 },
+                    { id: 91, name: "Buffalo Bill Chicken", desc: "Mozzarella, pollo buffalo piccante, cheddar, blue cheese", price: 8.00 },
+                    { id: 92, name: "Chicken Rancho", desc: "Mozzarella, pollo fritto, ranch dressing, bacon, cheddar", price: 8.50 },
+                    { id: 93, name: "Cheese Steak and Bake", desc: "Mozzarella, bistecca cheese steak, cipolle, funghi, peperoni, cheddar", price: 10.00 },
+                    { id: 94, name: "French Fries Pie", desc: "Mozzarella, salsa rosa, patatine fritte, bacon, cheddar", price: 8.00 },
+                    { id: 95, name: "Don Francisco Taco", desc: "Mozzarella, carne taco piccante, bruschetta, lattuga, cheddar, buffalo", price: 8.00 },
+                    { id: 96, name: "Cuzin Tano", desc: "Bufala, Alfredo sauce, salsiccia, bacon. Uscita: rucola, crudo Parma", price: 9.00 },
+                    { id: 97, name: "Sweet Alabama", desc: "Mozzarella, pollo fritto, bacon, cheddar, honey mustard", price: 8.50 },
+                    { id: 98, name: "Heart Attack", desc: "Bbq mayo, patatine fritte, pollo fritto, onion rings, mozz sticks, bacon, ranch", price: 10.00 },
+                    { id: 99, name: "Pizza Mania Original", desc: "Pomodoro, mozz, funghi, cipolle, peperoni, salsiccia, cotto, salamino", price: 8.50 },
+                    { id: 100, name: "Chips Pizza", desc: "Mozzarella, patatine chips, salsa rosa, ranch, cheddar, pollo fritto", price: 8.50 }
+                ]
+            },
+            {
+                id: "pizze-gourmet",
+                category: "Pizze Gourmet",
+                items: [
+                    { id: 101, name: "Serenata", desc: "Mozz, fonduta gorgonzola, pere, crudo, noci, rucola, glassa balsamica", price: 9.00 },
+                    { id: 102, name: "Orton-Zola", desc: "Mozz, fonduta gorgonzola, chips zucchine, melanzane, mandorle, pesto basilico", price: 9.00 },
+                    { id: 103, name: "Raffinata", desc: "Bufala, funghi, ciliegino, rucola, crudo, glassa balsamica, pecorino", price: 10.00 },
+                    { id: 104, name: "Bronx", desc: "Bufala, cipolle. Uscita: rucola, grana, cotto alle erbe, mandorle", price: 9.00 },
+                    { id: 105, name: "Nfarinati Originale", desc: "Mozz, salsiccia, bacon, cipolle, rucola, Buffalo ranch piccante", price: 8.00 },
+                    { id: 106, name: "Sole Giallo", desc: "Pomodoro giallo, bufala. Uscita: rucola, cotto alle erbe", price: 9.00 },
+                    { id: 107, name: "Malcom Ave", desc: "Bufala, crema zucca, bacon. Uscita: pistacchio, pesto pistacchio, basilico", price: 9.00 },
+                    { id: 108, name: "Lady Brown", desc: "Provola affumicata. Uscita: radicchio julienne, mortadella, pesto nocciole, pom secchi", price: 10.00 },
+                    { id: 109, name: "Murtade'", desc: "Bufala, crema pistacchio e ricotta, mortadella, granella pistacchio, rucola", price: 9.00 },
+                    { id: 110, name: "Pumpkin Pizza", desc: "Bufala, crema zucca rossa, datterino rosso, speck, rucola", price: 8.00 },
+                    { id: 111, name: "South Beach Pizza", desc: "Bufala, crema cipolla. Uscita: rucola, cotto erbe, pom secchi, burrata, pistacchio", price: 11.00 },
+                    { id: 112, name: "October Fest", desc: "Bufala, crema zucca. Uscita: chips zucchina, crema cipolle, mandorle, burrata, speck", price: 11.00 },
+                    { id: 113, name: "Wall Street Pizza", desc: "Datterino giallo. Uscita: fette bufala, speck, chips zucchine, noci, miele", price: 10.00 }
+                ]
+            },
+            {
+                id: "stromboli",
+                category: "Stromboli & Calzoni",
+                items: [
+                    { id: 114, name: "Family Style Stromboli", desc: "Mozz, cotto, funghi, salsiccia, salamino, peperoni, cipolle", price: 7.00 },
+                    { id: 115, name: "Cool Ranch Stromboli", desc: "Mozzarella, pollo fritto al ranch, bacon", price: 7.50 },
+                    { id: 116, name: "Mr Potato Stromboli", desc: "Mozzarella, patatine fritte, pollo fritto, bacon, salsa bbq", price: 7.50 },
+                    { id: 117, name: "Buffalo Chicken Calzone", desc: "Mozzarella, pollo fritto al buffalo piccante", price: 7.50 },
+                    { id: 118, name: "Ham & Cheese Calzone", desc: "Mozzarella, prosciutto cotto doc", price: 6.50 },
+                    { id: 119, name: "Veggie Calzone", desc: "Mozzarella, funghi, cipolle, spinaci, peperoni, olive, melanzane", price: 7.50 },
+                    { id: 120, name: "Hot Boy Calzone", desc: "Mozzarella, salamino piccante, peperoni, salsiccia, cipolle", price: 8.00 }
+                ]
+            },
+            {
+                id: "dessert",
+                category: "Pizza Dessert",
+                items: [
+                    { id: 121, name: "Oreos Pizza", desc: "Nutella, oreo, mandorle tostate, smarties, zucchero a velo", price: 7.50 },
+                    { id: 122, name: "Nutella's", desc: "Nutella, smarties, zucchero a velo", price: 6.00 },
+                    { id: 123, name: "Green Love", desc: "Crema al pistacchio, mandorle, zucchero a velo", price: 8.00 },
+                    { id: 124, name: "Black and White", desc: "Crema cioccolato bianco, oreo frantumati, caramello, zucchero a velo", price: 7.00 }
+                ]
+            }
+        ];
+
+        let cart = {};
+
+        function popolaOrariSenzaOverbooking() {
+            const select = document.getElementById('orario-consegna');
+            const payBtn = document.getElementById('pay-btn');
+            select.innerHTML = '';
+            
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            // 20 minuti di margine per la preparazione
+            const minTimeInMinutes = (currentHour * 60) + currentMinute + 20;
+
+            let slotAggiunti = 0;
+            // Orari di N'Farinati: dalle 18:30 alle 23:30
+            for(let h = 18; h <= 23; h++) {
+                for(let m = 0; m < 60; m += 15) {
+                    if (h === 18 && m < 30) continue; 
+                    if (h === 23 && m > 30) continue; 
+                    
+                    const slotTimeInMinutes = (h * 60) + m;
+                    // Mostriamo orari futuri, o tutti se la pizzeria non ha ancora aperto
+                    if (slotTimeInMinutes >= minTimeInMinutes || currentHour < 18) {
+                        let hh = h.toString().padStart(2, '0');
+                        let mm = m.toString().padStart(2, '0');
+                        let timeStr = `${hh}:${mm}`;
+                        select.innerHTML += `<option value="${timeStr}">${timeStr}</option>`;
+                        slotAggiunti++;
+                    }
+                }
+            }
+
+            if (slotAggiunti === 0) {
+                select.innerHTML = `<option value="">Orari esauriti per oggi</option>`;
+                payBtn.disabled = true;
+                payBtn.style.opacity = '0.5';
+            } else {
+                payBtn.disabled = false;
+                payBtn.style.opacity = '1';
+            }
+        }
+
+        function cambiaBottonePagamento() {
+            const metodo = document.getElementById('metodo-pagamento').value;
+            const btn = document.getElementById('pay-btn');
+            
+            if (metodo === 'contanti') {
+                btn.innerHTML = '<i class="fa-solid fa-check-to-slot"></i> Conferma Ordine';
+                btn.className = 'btn-confirm-order cash';
+            } else {
+                btn.innerHTML = '<i class="fa-regular fa-credit-card"></i> Paga con Nexi';
+                btn.className = 'btn-confirm-order';
+            }
+        }
+
+        function toggleOrderType() {
+            const type = document.querySelector('input[name="order-type"]:checked').value;
+            const labelOrario = document.getElementById('orario-label');
+            
+            if(type === 'takeaway') {
+                document.getElementById('lbl-takeaway').classList.add('active');
+                document.getElementById('lbl-delivery').classList.remove('active');
+                document.getElementById('delivery-fields').style.display = 'none';
+                labelOrario.innerText = "Orario di Ritiro *";
+            } else {
+                document.getElementById('lbl-takeaway').classList.remove('active');
+                document.getElementById('lbl-delivery').classList.add('active');
+                document.getElementById('delivery-fields').style.display = 'block';
+                labelOrario.innerText = "Orario di Consegna *";
+            }
+        }
+
+        function renderFilters() {
+            const filterContainer = document.getElementById('filters-container');
+            const btnAll = document.createElement('button'); btnAll.className = 'filter-btn active'; btnAll.innerText = 'Tutti';
+            btnAll.onclick = () => filterMenu('all', btnAll); filterContainer.appendChild(btnAll);
+            menuData.forEach(cat => {
+                const btn = document.createElement('button'); btn.className = 'filter-btn'; btn.innerText = cat.category;
+                btn.onclick = () => filterMenu(cat.id, btn); filterContainer.appendChild(btn);
+            });
+        }
+
+        function filterMenu(categoryId, btnElement) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); btnElement.classList.add('active');
+            document.querySelectorAll('.category-section').forEach(section => {
+                if (categoryId === 'all' || section.id === `cat-${categoryId}`) section.classList.remove('hidden'); else section.classList.add('hidden');
+            });
+            window.scrollTo({ top: document.getElementById('filters-container').offsetTop - 20, behavior: 'smooth' });
+        }
+
+        function renderMenu() {
+            const container = document.getElementById('menu-container');
+            menuData.forEach(category => {
+                const sectionDiv = document.createElement('div'); sectionDiv.className = 'category-section'; sectionDiv.id = `cat-${category.id}`;
+                sectionDiv.innerHTML = `<h2 class="category-title">${category.category}</h2>`;
+                category.items.forEach(item => {
+                    sectionDiv.innerHTML += `
+                        <div class="menu-item">
+                            <div class="item-header"><div class="item-name">${item.name}</div><div class="item-price">${item.price.toFixed(2).replace('.',',')}€</div></div>
+                            <p class="item-desc">${item.desc}</p>
+                            <div class="controls">
+                                <button class="btn-control" onclick="updateQty(${item.id}, -1)"><i class="fa-solid fa-minus"></i></button>
+                                <span class="qty" id="qty-${item.id}">0</span>
+                                <button class="btn-control" onclick="updateQty(${item.id}, 1)"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>`;
+                });
+                container.appendChild(sectionDiv);
+            });
+            
+            container.innerHTML += `
+                <div style="margin: 30px 15px; padding: 15px; background: rgba(0,0,0,0.2); border-left: 4px solid var(--accent-main); border-radius: 8px; font-size: 0.85rem; color: var(--text-muted);">
+                    <strong>NOTA BENE:</strong> I prezzi delle pizze indicati si riferiscono al formato "Personale". L'elenco di tutti i prodotti allergizzanti è a vostra disposizione chiedendolo al personale. All'occorrenza alcuni prodotti possono essere surgelati.
+                </div>
+            `;
+        }
+
+        function updateQty(itemId, change) {
+            if (!cart[itemId]) cart[itemId] = 0; cart[itemId] += change; if (cart[itemId] < 0) cart[itemId] = 0;
+            document.getElementById(`qty-${itemId}`).innerText = cart[itemId]; updateCartUI();
+        }
+
+        function updateCartUI() {
+            let total = 0, totalItems = 0;
+            menuData.forEach(category => category.items.forEach(item => {
+                if (cart[item.id]) { total += item.price * cart[item.id]; totalItems += cart[item.id]; }
+            }));
+            document.getElementById('total-price').innerText = total.toFixed(2).replace('.',',') + ' €';
+            const footer = document.getElementById('cart-footer');
+            if (totalItems > 0) footer.classList.add('visible'); else footer.classList.remove('visible');
+        }
+
+        function openCheckout() { 
+            document.getElementById('checkout-modal').classList.add('active'); 
+            popolaOrariSenzaOverbooking();
+        }
+
+        function closeCheckout() { 
+            document.getElementById('checkout-modal').classList.remove('active'); 
+        }
+
+        async function sendOrderWithDetails() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const orderType = document.querySelector('input[name="order-type"]:checked').value;
+            const notes = document.getElementById('cust-notes').value.trim();
+            const orario = document.getElementById('orario-consegna').value;
+            const metodoPagamento = document.getElementById('metodo-pagamento').value;
+
+            if(!name || !phone) { alert("Compila Nome e Telefono per continuare!"); return; }
+
+            let deliveryInfo = "";
+            if (orderType === 'delivery') {
+                const address = document.getElementById('cust-address').value.trim();
+                if(!address) { alert("Inserisci l'indirizzo di consegna."); return; }
+                deliveryInfo = `🛵 *Consegna a Domicilio*%0A📍 Indirizzo: ${address}%0A🕒 Orario Richiesto: ${orario}`;
+            } else {
+                deliveryInfo = `🛍️ *Ritiro al Locale*%0A🕒 Orario Richiesto: ${orario}`;
+            }
+
+            const cleanName = name.replace(/\s+/g, '').toUpperCase(); 
+            const firstLetter = cleanName.charAt(0) || 'N';
+            const lastLetter = cleanName.charAt(cleanName.length - 1) || 'F';
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            
+            const orderId = `NFAR-${firstLetter}${lastLetter}-${randomNum}_${orario}`;
+
+            let cartItems = []; let total = 0; 
+            
+            let text = `🆔 *Rif:* ${orderId}%0A%0A👤 *Cliente:* ${name}%0A📱 *Telefono:* ${phone}%0A${deliveryInfo}%0A`;
+            if(notes) text += `📝 *Note:* ${notes}%0A`; 
+            text += `%0A*RIEPILOGO ORDINE:*%0A`;
+
+            menuData.forEach(category => category.items.forEach(item => {
+                if (cart[item.id] > 0) {
+                    cartItems.push({ name: item.name, price: item.price, qty: cart[item.id] });
+                    const lineTotal = item.price * cart[item.id]; total += lineTotal;
+                    text += `▫️ ${cart[item.id]}x ${item.name} (${lineTotal.toFixed(2)}€)%0A`;
+                }
+            }));
+
+            if (total < 1.00) { alert("L'ordine minimo è 1.00 €!"); return; }
+            text += `%0A💰 *TOTALE: ${total.toFixed(2)} €*%0A`;
+
+            const btn = document.getElementById('pay-btn');
+
+            // --- GESTIONE PAGAMENTO IN CONTANTI ---
+            // Nessun database, va dritto alla pagina successo
+            if (metodoPagamento === "contanti") {
+                text = `⚠️ *ORDINE DA PAGARE IN CONTANTI* ⚠️%0A%0A` + text;
+                localStorage.setItem('peterbun_order_message', text);
+                window.location.href = "successo.html";
+                return;
+            }
+
+            // --- GESTIONE PAGAMENTO CARTA NEXI ---
+            text = `✅ *ORDINE PAGATO ONLINE (Nexi)*%0A%0A` + text;
+            localStorage.setItem('peterbun_order_message', text);
+            
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Creazione sessione...'; 
+            btn.disabled = true;
+
+            try {
+                const response = await fetch("/paga", {
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        orderId: orderId, 
+                        totalAmount: total
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success && data.redirectUrl) { 
+                    btn.innerHTML = '<i class="fa-solid fa-lock"></i> Trasferimento...';
+                    window.location.href = data.redirectUrl; 
+                } else { 
+                    alert("🚫 ATTENZIONE: " + data.error); 
+                    cambiaBottonePagamento();
+                    btn.disabled = false; 
+                }
+            } catch (error) {
+                alert("Errore di connessione. Riprova tra poco."); 
+                cambiaBottonePagamento();
+                btn.disabled = false;
+            }
+        }
+        
+        window.onload = function() {
+            renderFilters(); 
+            renderMenu(); 
+        };
+    </script>
+</body>
+</html>
