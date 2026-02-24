@@ -27,8 +27,8 @@ export async function onRequest(context) {
             "paymentSession": {
                 "actionType": "PAY",
                 "amount": amountCents,
-                "resultUrl": "https://IL_TUO_SITO.pages.dev/successo.html", 
-                "cancelUrl": "https://IL_TUO_SITO.pages.dev/errore.html"
+                "resultUrl": "https://nfarinati.pages.dev/successo.html", 
+                "cancelUrl": "https://nfarinati.pages.dev/errore.html"
                 // Niente Webhook! Non serve tracciare gli slot.
             }
         };
