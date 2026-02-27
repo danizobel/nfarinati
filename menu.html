@@ -14,7 +14,7 @@
             --bg-card: #ffffff; 
             --text-dark: #2a3324; 
             --text-muted: #6b7a5d; 
-            --accent-main: #d32f2f; /* Rosso N'Farinati */
+            --accent-main: #d32f2f; 
             --border-light: #e9ecef;
             --success: #28a745;
         }
@@ -44,8 +44,6 @@
         
         /* CARD PRODOTTI */
         .menu-item { background-color: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 18px; margin: 15px 0; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03);}
-        .item-placeholder-img { width: calc(100% + 36px); margin: -18px -18px 15px -18px; height: 180px; object-fit: cover; border-radius: 16px 16px 0 0; border-bottom: 1px solid var(--border-light);}
-        
         .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
         .item-name { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text-dark); line-height: 1.2; padding-right: 10px;}
         .item-price { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--accent-main); white-space: nowrap;}
@@ -53,7 +51,6 @@
         
         .controls { display: flex; align-items: center; justify-content: flex-end; margin-top: auto; padding-top: 15px; border-top: 1px dashed var(--border-light); }
         .qty-box { display: flex; align-items: center; gap: 15px; }
-        
         .btn-control { background: #ffffff; color: var(--accent-main); border: 2px solid var(--border-light); border-radius: 8px; width: 36px; height: 36px; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s;}
         .btn-control:active { background: var(--accent-main); color: #ffffff; border-color: var(--accent-main);}
         .qty { font-weight: 700; font-size: 1.2rem; min-width: 25px; text-align: center; color: var(--text-dark);}
@@ -63,19 +60,20 @@
         .variant-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px; line-height: 1.4; font-weight: 600;}
         .variant-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; color: var(--text-dark); font-weight: 700; margin-bottom: 5px;}
 
-        /* MODALE PERSONALIZZAZIONE STILE JUST EAT */
+        /* MODALE PERSONALIZZAZIONE */
         .custom-section-title { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--text-dark); margin: 25px 0 10px; font-size: 1.1rem; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--border-light); padding-bottom: 5px;}
         .badge-req { font-size: 0.65rem; background: var(--text-dark); color: #fff; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; font-weight: 700;}
+        .badge-opt { font-size: 0.65rem; background: var(--success); color: #fff; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; font-weight: 700;}
         
         .custom-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
         .custom-option-card { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; color: var(--text-dark); background: #ffffff; padding: 16px; border-radius: 12px; border: 1px solid var(--border-light); font-weight: 500; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;}
         .custom-option-card.selected { border-color: var(--accent-main); background: rgba(211, 47, 47, 0.03); }
+        .custom-option-card.opt-removal { border-color: var(--border-light); }
+        .custom-option-card.opt-removal.selected { border-color: #6b7a5d; background: rgba(107, 122, 93, 0.05); text-decoration: line-through; color: var(--text-muted);}
         .custom-option-left { display: flex; align-items: center; width: 100%; cursor: pointer;}
         .custom-option-left input { margin-right: 15px; accent-color: var(--accent-main); transform: scale(1.4); }
+        .custom-option-card.opt-removal input { accent-color: #6b7a5d; }
         .custom-price { margin-left: auto; color: var(--accent-main); font-weight: 700; font-size: 0.95rem; }
-
-        .allergens-box { margin: 40px 15px 20px; padding: 20px; background: var(--bg-card); border: 1px dashed var(--accent-main); border-radius: 12px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; text-align: justify;}
-        .allergens-box h4 { color: var(--accent-main); margin-bottom: 10px; font-size: 1rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 800;}
 
         /* CARRELLO FOOTER */
         .cart-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; padding: 15px 20px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid var(--accent-main); transform: translateY(120%); transition: transform 0.3s ease; z-index: 1000; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 25px rgba(0,0,0,0.15);}
@@ -83,7 +81,6 @@
         .cart-total { font-size: 1.4rem; font-weight: 800; color: var(--accent-main); font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column;}
         .cart-total span { font-size: 0.75rem; color: var(--text-dark); text-transform: uppercase; margin-bottom: 2px; }
         
-        /* STILI SCONTO */
         .old-price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.95rem; font-weight: 600; margin-right: 8px;}
         .discount-badge { background: var(--success); color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 5px; font-weight: 700;}
         
@@ -115,6 +112,22 @@
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border-radius: 8px; background: #ffffff; border: 1px solid var(--border-light); color: var(--text-dark); outline: none; font-size: 1rem; appearance: none; -webkit-appearance: none; font-family: 'Poppins', sans-serif; font-weight: 500;}
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent-main); box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);}
         
+        /* CART SUMMARY IN MODAL */
+        .cart-summary-box { margin-bottom: 20px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid var(--border-light); }
+        .cart-summary-title { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-dark); margin-bottom: 15px; border-bottom: 2px solid var(--border-light); padding-bottom: 8px;}
+        
+        /* UPSELL SECTION MODIFICATA: SENZA SCROLL, 3 COLONNE FLUIDE */
+        .upsell-section { background: rgba(211, 47, 47, 0.04); border: 1px dashed var(--accent-main); border-radius: 12px; padding: 15px; margin-bottom: 20px; }
+        .upsell-title { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--accent-main); margin-bottom: 12px; text-transform: uppercase; }
+        
+        .upsell-scroller { display: flex; gap: 8px; justify-content: space-between; padding-bottom: 0;}
+        
+        .upsell-card { flex: 1; min-width: 0; background: #fff; border: 1px solid var(--border-light); border-radius: 10px; padding: 10px 6px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 3px 8px rgba(0,0,0,0.04);}
+        .upsell-name { font-size: 0.75rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; line-height: 1.2; word-wrap: break-word;}
+        .upsell-price { font-size: 0.85rem; font-weight: 800; color: var(--accent-main); margin-bottom: 8px;}
+        .upsell-btn { width: 100%; background: #fff; color: var(--accent-main); border: 2px solid var(--accent-main); padding: 6px 2px; border-radius: 8px; font-size: 0.7rem; font-weight: 800; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif;}
+        .upsell-btn:active { background: var(--accent-main); color: #fff; }
+
         .btn-confirm-order { width: 100%; background: var(--accent-main); color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: 800; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; transition: opacity 0.3s, background 0.3s;}
         .btn-confirm-order:disabled { background: #ced4da; cursor: not-allowed; color: #fff; box-shadow: none;}
         
@@ -126,7 +139,6 @@
             .category-title { grid-column: span 2; text-align: center; margin-top: 20px; font-size: 2rem; }
             .menu-item { margin: 0; height: 100%; }
             .cart-footer { justify-content: center; gap: 50px; padding: 20px 0; }
-            .allergens-box { grid-column: span 2; margin-top: 40px;}
         }
     </style>
 </head>
@@ -164,6 +176,11 @@
             </div>
             
             <div class="modal-body">
+                
+                <div id="cart-items-summary" class="cart-summary-box"></div>
+
+                <div id="upsell-container"></div>
+
                 <div class="type-toggle">
                     <label id="lbl-takeaway" class="active">
                         <input type="radio" name="order-type" value="takeaway" checked onchange="toggleOrderType()">
@@ -237,330 +254,1894 @@
 </form>
 
     <script>
-        const menuData = [
-            {
-                id: "pizze",
-                category: "Pizze",
-                items: [
-                    { id: 1, categoryName: "Pizze", name: "Diavola", desc: "Personale / Familiare / Gluten free / Integrale", price: 7.50 },
-                    { id: 2, categoryName: "Pizze", name: "Bianca", desc: "Personale / Familiare / Gluten free / Integrale", price: 5.50 },
-                    { id: 3, categoryName: "Pizze", name: "San Francesco", desc: "Personale / Familiare / Gluten free / Integrale", price: 9.00 },
-                    { id: 4, categoryName: "Pizze", name: "Orto Bio", desc: "Personale / Familiare / Integrale", price: 9.00 },
-                    { id: 5, categoryName: "Pizze", name: "Eggplant Parmigiana", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.00 },
-                    { id: 6, categoryName: "Pizze", name: "Naples", desc: "Personale / Familiare / Gluten free / Integrale", price: 6.50 },
-                    { id: 7, categoryName: "Pizze", name: "Margherita 1983", desc: "Personale / Familiare / Gluten free / Integrale", price: 9.00 },
-                    { id: 8, categoryName: "Pizze", name: "4 Cheese", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.00 },
-                    { id: 9, categoryName: "Pizze", name: "La Quinta Margherita", desc: "Personale / Familiare / Gluten free / Integrale", price: 9.00 },
-                    { id: 10, categoryName: "Pizze", name: "Aspra Mare", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.00 },
-                    { id: 11, categoryName: "Pizze", name: "4 Gusti", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.00 },
-                    { id: 12, categoryName: "Pizze", name: "Margherita classica", desc: "Personale / Familiare / Gluten free / Integrale", price: 6.00 },
-                    { id: 13, categoryName: "Pizze", name: "Capricciosa", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.50 },
-                    { id: 14, categoryName: "Pizze", name: "Marinara elegante D.O.P.", desc: "Personale / Gluten free / Integrale", price: 11.00 },
-                    { id: 15, categoryName: "Pizze", name: "Parmigiana", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.00 },
-                    { id: 16, categoryName: "Pizze", name: "Sfincione Modern Pizza", desc: "Personale / Familiare / Integrale", price: 9.00 },
-                    { id: 17, categoryName: "Pizze", name: "Queen Margherita D.O.P.", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.50 },
-                    { id: 18, categoryName: "Pizze", name: "Margherita 23", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.50 },
-                    { id: 19, categoryName: "Pizze", name: "Veggy Pizza", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.50 },
-                    { id: 20, categoryName: "Pizze", name: "Romana", desc: "Personale / Familiare / Gluten free / Integrale", price: 7.50 },
-                    { id: 21, categoryName: "Pizze", name: "Patabom", desc: "Personale / Familiare / Integrale", price: 7.50 },
-                    { id: 22, categoryName: "Pizze", name: "Bresa Hola Pizza", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 23, categoryName: "Pizze", name: "Don Calogero", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.00 },
-                    { id: 24, categoryName: "Pizze", name: "Caprese Agro-Sarnese", desc: "Personale / Gluten free / Integrale", price: 12.00 }
-                ]
-            },
-            {
-                id: "pizze-americane",
-                category: "Pizze Americane",
-                items: [
-                    { id: 25, categoryName: "Pizze Americane", name: "Cuzin Tano", desc: "Personale / Familiare / Integrale", price: 9.50 },
-                    { id: 26, categoryName: "Pizze Americane", name: "Don Francisco Taco", desc: "Personale / Familiare / Integrale", price: 9.50 },
-                    { id: 27, categoryName: "Pizze Americane", name: "Mango Habanero Chicken Pizza", desc: "Personale / Familiare", price: 11.50 },
-                    { id: 28, categoryName: "Pizze Americane", name: "Buffalo Bill Chicken", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 29, categoryName: "Pizze Americane", name: "Grandma NCY Pizza", desc: "Personale / Familiare / Gluten free / Integrale", price: 7.00 },
-                    { id: 30, categoryName: "Pizze Americane", name: "BBQ Chicken", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 31, categoryName: "Pizze Americane", name: "Chicken Parm", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 32, categoryName: "Pizze Americane", name: "Sicilian in New Jersey", desc: "Personale / Familiare / Gluten free", price: 8.50 },
-                    { id: 33, categoryName: "Pizze Americane", name: "Chicken & Pesto", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 34, categoryName: "Pizze Americane", name: "Only Meat Lover", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 35, categoryName: "Pizze Americane", name: "Chicken Rancho", desc: "Personale / Familiare / Integrale", price: 9.50 },
-                    { id: 36, categoryName: "Pizze Americane", name: "Heart Attack", desc: "Personale / Familiare / Integrale", price: 11.50 },
-                    { id: 37, categoryName: "Pizze Americane", name: "Pizza Mania Original", desc: "Personale / Familiare / Integrale", price: 9.50 },
-                    { id: 38, categoryName: "Pizze Americane", name: "Potato & Onion Deluxe", desc: "Personale / Familiare / Integrale", price: 9.00 },
-                    { id: 39, categoryName: "Pizze Americane", name: "Greenfield", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 40, categoryName: "Pizze Americane", name: "Stuffed Meat Pizza Familiare Ripiena", desc: "", price: 25.00 },
-                    { id: 41, categoryName: "Pizze Americane", name: "Chicken Caesar Crust", desc: "Personale / Familiare / Gluten free / Integrale", price: 8.50 },
-                    { id: 42, categoryName: "Pizze Americane", name: "Tropical Hawaiian Only for Real Americans", desc: "Personale / Familiare / Integrale", price: 7.50 },
-                    { id: 43, categoryName: "Pizze Americane", name: "Twenty Miles", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 44, categoryName: "Pizze Americane", name: "Sweet Alabama", desc: "Personale / Familiare / Integrale", price: 9.50 },
-                    { id: 45, categoryName: "Pizze Americane", name: "Las Vegas Nevada", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 46, categoryName: "Pizze Americane", name: "Brooklyn Original", desc: "Personale / Familiare / Gluten free / Integrale", price: 7.00 },
-                    { id: 47, categoryName: "Pizze Americane", name: "French Fries Pie", desc: "Personale / Familiare / Integrale", price: 8.50 },
-                    { id: 48, categoryName: "Pizze Americane", name: "Cheese Steak and Bake", desc: "Personale / Familiare / Integrale", price: 11.00 },
-                    { id: 49, categoryName: "Pizze Americane", name: "Chips Pizza", desc: "Personale / Familiare / Integrale", price: 9.50 }
-                ]
-            },
-            {
-                id: "pizze-gourmet",
-                category: "Pizze Gourmet",
-                items: [
-                    { id: 50, categoryName: "Pizze Gourmet", name: "Bronx", desc: "Personale / Familiare / Integrale", price: 10.50 },
-                    { id: 51, categoryName: "Pizze Gourmet", name: "Orton Zola", desc: "Personale / Familiare / Integrale", price: 9.50 },
-                    { id: 52, categoryName: "Pizze Gourmet", name: "La Maria", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 53, categoryName: "Pizze Gourmet", name: "October Fest Pizza", desc: "Personale / Familiare / Integrale", price: 12.00 },
-                    { id: 54, categoryName: "Pizze Gourmet", name: "Atlantic City Pizza", desc: "", price: 12.00 },
-                    { id: 55, categoryName: "Pizze Gourmet", name: "Malcolm Ave", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 56, categoryName: "Pizze Gourmet", name: "Focarcina", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 57, categoryName: "Pizze Gourmet", name: "Raffinata", desc: "Personale / Familiare / Integrale", price: 11.00 },
-                    { id: 58, categoryName: "Pizze Gourmet", name: "Romana Luxury", desc: "Personale / Integrale", price: 13.50 },
-                    { id: 59, categoryName: "Pizze Gourmet", name: "Saint Thomas", desc: "Personale / Familiare / Integrale", price: 11.50 },
-                    { id: 60, categoryName: "Pizze Gourmet", name: "Pumpkin Pizza", desc: "Personale / Familiare / Integrale", price: 9.00 },
-                    { id: 61, categoryName: "Pizze Gourmet", name: "’Nfarinati Originale", desc: "Personale / Familiare / Gluten free / Integrale", price: 9.50 },
-                    { id: 62, categoryName: "Pizze Gourmet", name: "Guancia-Tella", desc: "Personale / Integrale", price: 12.50 },
-                    { id: 63, categoryName: "Pizze Gourmet", name: "Serenata", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.50 },
-                    { id: 64, categoryName: "Pizze Gourmet", name: "South Beach", desc: "Personale / Familiare / Gluten free / Integrale", price: 12.00 },
-                    { id: 65, categoryName: "Pizze Gourmet", name: "Sole Giallo", desc: "Personale / Familiare / Integrale", price: 10.50 },
-                    { id: 66, categoryName: "Pizze Gourmet", name: "Porcini Mushroom", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 67, categoryName: "Pizze Gourmet", name: "Wall Street Pizza", desc: "Personale / Familiare / Integrale", price: 11.00 },
-                    { id: 68, categoryName: "Pizze Gourmet", name: "Murtade’", desc: "Personale / Familiare / Gluten free / Integrale", price: 10.00 },
-                    { id: 69, categoryName: "Pizze Gourmet", name: "Lady Brown Pizza", desc: "Personale / Familiare / Gluten free / Integrale", price: 12.00 }
-                ]
-            },
-            {
-                id: "pizze-senza-glutine",
-                category: "Pizze Senza Glutine",
-                items: [
-                    { id: 70, categoryName: "Pizze Senza Glutine", name: "Naples", desc: "", price: 9.00 },
-                    { id: 71, categoryName: "Pizze Senza Glutine", name: "Sicilian in New Jersey", desc: "", price: 11.00 },
-                    { id: 72, categoryName: "Pizze Senza Glutine", name: "Aspra Mare", desc: "", price: 10.50 },
-                    { id: 73, categoryName: "Pizze Senza Glutine", name: "La Maria", desc: "", price: 12.50 },
-                    { id: 74, categoryName: "Pizze Senza Glutine", name: "San Francesco", desc: "", price: 11.50 },
-                    { id: 75, categoryName: "Pizze Senza Glutine", name: "Parmigiana", desc: "", price: 10.50 },
-                    { id: 76, categoryName: "Pizze Senza Glutine", name: "Brooklyn Original", desc: "", price: 9.50 },
-                    { id: 77, categoryName: "Pizze Senza Glutine", name: "Serenata", desc: "", price: 12.50 },
-                    { id: 78, categoryName: "Pizze Senza Glutine", name: "Veggy Pizza", desc: "", price: 11.00 },
-                    { id: 79, categoryName: "Pizze Senza Glutine", name: "Murtade’", desc: "", price: 12.50 },
-                    { id: 80, categoryName: "Pizze Senza Glutine", name: "4 Gusti", desc: "", price: 10.50 },
-                    { id: 81, categoryName: "Pizze Senza Glutine", name: "Diavola", desc: "", price: 9.50 },
-                    { id: 82, categoryName: "Pizze Senza Glutine", name: "Only Meat Lover", desc: "", price: 12.50 },
-                    { id: 83, categoryName: "Pizze Senza Glutine", name: "Eggplant Parmigiana", desc: "", price: 10.50 },
-                    { id: 84, categoryName: "Pizze Senza Glutine", name: "Romana", desc: "", price: 9.50 },
-                    { id: 85, categoryName: "Pizze Senza Glutine", name: "Capricciosa", desc: "", price: 11.00 },
-                    { id: 86, categoryName: "Pizze Senza Glutine", name: "Malcolm Ave", desc: "", price: 12.50 },
-                    { id: 87, categoryName: "Pizze Senza Glutine", name: "Bianca", desc: "", price: 8.00 },
-                    { id: 88, categoryName: "Pizze Senza Glutine", name: "GreenField", desc: "", price: 12.50 },
-                    { id: 89, categoryName: "Pizze Senza Glutine", name: "4 Cheese", desc: "", price: 10.50 },
-                    { id: 90, categoryName: "Pizze Senza Glutine", name: "Don Calogero", desc: "", price: 10.00 },
-                    { id: 91, categoryName: "Pizze Senza Glutine", name: "South Beach", desc: "", price: 14.50 },
-                    { id: 92, categoryName: "Pizze Senza Glutine", name: "Chicken Caesar Crust", desc: "", price: 11.00 },
-                    { id: 93, categoryName: "Pizze Senza Glutine", name: "Bresa Hola Pizza", desc: "", price: 12.50 },
-                    { id: 94, categoryName: "Pizze Senza Glutine", name: "Grandma NCY Pizza", desc: "", price: 9.50 },
-                    { id: 95, categoryName: "Pizze Senza Glutine", name: "Margherita Classica", desc: "", price: 8.00 }
-                ]
-            },
-            {
-                id: "calzoni",
-                category: "Calzoni",
-                items: [
-                    { id: 96, categoryName: "Calzoni", name: "Ham & Cheese Calzone", desc: "", price: 7.50 },
-                    { id: 97, categoryName: "Calzoni", name: "BBQ Chicken Calzone", desc: "", price: 8.50 },
-                    { id: 98, categoryName: "Calzoni", name: "Buffalo Chicken Calzone", desc: "", price: 8.50 },
-                    { id: 99, categoryName: "Calzoni", name: "Veggie Calzone", desc: "", price: 8.50 },
-                    { id: 100, categoryName: "Calzoni", name: "Hot Boy Calzone", desc: "", price: 9.00 }
-                ]
-            },
-            {
-                id: "appetizers",
-                category: "Appetizers",
-                items: [
-                    { id: 101, categoryName: "Appetizers", name: "Chicken Nuggets", desc: "8 pezzi", price: 6.00 },
-                    { id: 102, categoryName: "Appetizers", name: "Jalapeños Red Hot", desc: "6 pezzi", price: 6.50 },
-                    { id: 103, categoryName: "Appetizers", name: "Pizza Fries", desc: "", price: 6.00 },
-                    { id: 104, categoryName: "Appetizers", name: "Crazy Fries", desc: "", price: 7.00 },
-                    { id: 105, categoryName: "Appetizers", name: "Mozzarella Sticks", desc: "6 pezzi", price: 5.00 },
-                    { id: 106, categoryName: "Appetizers", name: "Seasoned Fries (spicchi spicy)", desc: "1 pezzo / 2 pezzi", price: 3.50 },
-                    { id: 107, categoryName: "Appetizers", name: "Cheese Fries", desc: "", price: 4.50 },
-                    { id: 108, categoryName: "Appetizers", name: "French Fries", desc: "1 pezzo / 2 pezzi", price: 2.00 },
-                    { id: 109, categoryName: "Appetizers", name: "Combo Platter", desc: "", price: 7.00 },
-                    { id: 110, categoryName: "Appetizers", name: "Onion Rings", desc: "", price: 4.00 },
-                    { id: 111, categoryName: "Appetizers", name: "Chicken Wings", desc: "6 pezzi", price: 6.00 },
-                    { id: 112, categoryName: "Appetizers", name: "Patate Surecrisp Fry’n Dip con Buccia", desc: "", price: 4.00 },
-                    { id: 113, categoryName: "Appetizers", name: "Chicken Fingers", desc: "8 pezzi", price: 6.50 },
-                    { id: 114, categoryName: "Appetizers", name: "Sweet Potato Fries", desc: "", price: 5.50 },
-                    { id: 115, categoryName: "Appetizers", name: "Wurstel alla Griglia", desc: "", price: 5.00 },
-                    { id: 116, categoryName: "Appetizers", name: "Crostini di Tuma Fritta", desc: "6 pezzi", price: 6.50 },
-                    { id: 117, categoryName: "Appetizers", name: "Misto Caldo", desc: "", price: 6.00 },
-                    { id: 118, categoryName: "Appetizers", name: "Curly Fries", desc: "", price: 5.00 },
-                    { id: 119, categoryName: "Appetizers", name: "Franky Fries", desc: "", price: 6.00 }
-                ]
-            },
-            {
-                id: "insalate",
-                category: "Insalate",
-                items: [
-                    { id: 120, categoryName: "Insalate", name: "Burger Salad", desc: "", price: 12.50 },
-                    { id: 121, categoryName: "Insalate", name: "Cesar Palace Salad", desc: "", price: 12.50 },
-                    { id: 122, categoryName: "Insalate", name: "Los Angeles Salad", desc: "", price: 14.00 },
-                    { id: 123, categoryName: "Insalate", name: "Finest Salad", desc: "", price: 14.00 },
-                    { id: 124, categoryName: "Insalate", name: "Midland Salad", desc: "", price: 12.50 },
-                    { id: 125, categoryName: "Insalate", name: "Crispy Salad", desc: "", price: 14.00 }
-                ]
-            },
-            {
-                id: "mini-burgers",
-                category: "Mini Burgers",
-                items: [
-                    { id: 126, categoryName: "Mini Burgers", name: "Mini Chicken 2", desc: "", price: 2.50 },
-                    { id: 127, categoryName: "Mini Burgers", name: "Mini Burger 1", desc: "", price: 2.00 },
-                    { id: 128, categoryName: "Mini Burgers", name: "Mini Chicken 1", desc: "", price: 2.00 },
-                    { id: 129, categoryName: "Mini Burgers", name: "Mini Burger 2", desc: "", price: 2.50 }
-                ]
-            },
-            {
-                id: "american-hamburger",
-                category: "American Hamburger",
-                items: [
-                    { id: 130, categoryName: "American Hamburger", name: "Drive in Burger", desc: "", price: 9.50 },
-                    { id: 131, categoryName: "American Hamburger", name: "Pistacchino Burger", desc: "", price: 13.00 },
-                    { id: 132, categoryName: "American Hamburger", name: "Country Burger", desc: "", price: 10.50 },
-                    { id: 133, categoryName: "American Hamburger", name: "Greta Burger", desc: "", price: 10.00 },
-                    { id: 134, categoryName: "American Hamburger", name: "Fat Bastard Burger", desc: "", price: 13.00 },
-                    { id: 135, categoryName: "American Hamburger", name: "GB Style Burger", desc: "", price: 9.00 },
-                    { id: 136, categoryName: "American Hamburger", name: "The Lo Galbo’s Burger", desc: "", price: 8.00 },
-                    { id: 137, categoryName: "American Hamburger", name: "Jersey Boy Burger", desc: "", price: 9.00 },
-                    { id: 138, categoryName: "American Hamburger", name: "Sinaloa Mexico Burger", desc: "", price: 9.50 },
-                    { id: 139, categoryName: "American Hamburger", name: "Good Fellas Burger", desc: "", price: 8.50 },
-                    { id: 140, categoryName: "American Hamburger", name: "N’farinati Original Burger", desc: "", price: 10.00 },
-                    { id: 141, categoryName: "American Hamburger", name: "New York Times Burger", desc: "", price: 9.00 }
-                ]
-            },
-            {
-                id: "panini-americani",
-                category: "Panini Americani",
-                items: [
-                    { id: 142, categoryName: "Panini Americani", name: "Chicken BLT American Classic", desc: "", price: 8.00 },
-                    { id: 143, categoryName: "Panini Americani", name: "California Chicken American Classic", desc: "", price: 8.00 },
-                    { id: 144, categoryName: "Panini Americani", name: "Grilled Chicken", desc: "", price: 9.50 },
-                    { id: 145, categoryName: "Panini Americani", name: "Heavy Hitter Piccante", desc: "", price: 10.50 },
-                    { id: 146, categoryName: "Panini Americani", name: "Italian Hot Dog Italo Americano", desc: "", price: 7.00 },
-                    { id: 147, categoryName: "Panini Americani", name: "Hot Dog Maxi", desc: "", price: 6.00 },
-                    { id: 148, categoryName: "Panini Americani", name: "Chicken Bacon Ranch Most Loved Sandwich", desc: "", price: 9.00 },
-                    { id: 149, categoryName: "Panini Americani", name: "Chicken Parm American Finest", desc: "", price: 8.00 },
-                    { id: 150, categoryName: "Panini Americani", name: "Fat Bastard Per i Più Giovani", desc: "", price: 11.00 },
-                    { id: 151, categoryName: "Panini Americani", name: "Cardiac Arrest Per i Più Giovani", desc: "", price: 11.00 }
-                ]
-            },
-            {
-                id: "philly-style-cheesesteaks",
-                category: "Philly Style Cheesesteaks",
-                items: [
-                    { id: 152, categoryName: "Philly Style Cheesesteaks", name: "Bacon Ranch", desc: "", price: 9.50 },
-                    { id: 153, categoryName: "Philly Style Cheesesteaks", name: "Southern Style", desc: "", price: 9.50 },
-                    { id: 154, categoryName: "Philly Style Cheesesteaks", name: "Original Philly Sandwich", desc: "", price: 9.00 },
-                    { id: 155, categoryName: "Philly Style Cheesesteaks", name: "Cheesesteak on Steroids", desc: "", price: 9.50 },
-                    { id: 156, categoryName: "Philly Style Cheesesteaks", name: "California Style", desc: "", price: 9.00 },
-                    { id: 157, categoryName: "Philly Style Cheesesteaks", name: "’Nfari Steak Sandwich", desc: "", price: 9.50 },
-                    { id: 158, categoryName: "Philly Style Cheesesteaks", name: "Devil Melt", desc: "", price: 9.50 },
-                    { id: 159, categoryName: "Philly Style Cheesesteaks", name: "Cheesesteak", desc: "", price: 8.50 }
-                ]
-            },
-            {
-                id: "panini-piastrati",
-                category: "Panini Piastrati",
-                items: [
-                    { id: 160, categoryName: "Panini Piastrati", name: "Panino Piccantino", desc: "", price: 7.50 },
-                    { id: 161, categoryName: "Panini Piastrati", name: "Panino ’Nfarinati Special", desc: "", price: 8.50 },
-                    { id: 162, categoryName: "Panini Piastrati", name: "Panino Cartoccio", desc: "salsa a scelta", price: 5.00 },
-                    { id: 163, categoryName: "Panini Piastrati", name: "Sofisticato", desc: "", price: 8.50 },
-                    { id: 164, categoryName: "Panini Piastrati", name: "Panino Alessio Player", desc: "", price: 5.00 },
-                    { id: 165, categoryName: "Panini Piastrati", name: "Panino Tonno e Cipolla", desc: "", price: 7.00 },
-                    { id: 166, categoryName: "Panini Piastrati", name: "Panino Bresa Hola", desc: "", price: 8.50 },
-                    { id: 167, categoryName: "Panini Piastrati", name: "Panino San Daniele", desc: "", price: 8.00 },
-                    { id: 168, categoryName: "Panini Piastrati", name: "Panino Topolino", desc: "salsa a scelta", price: 5.50 }
-                ]
-            },
-            {
-                id: "wrap",
-                category: "Wrap",
-                items: [
-                    { id: 169, categoryName: "Wrap", name: "Pump It Up Wrap", desc: "", price: 8.00 },
-                    { id: 170, categoryName: "Wrap", name: "Burger Wrap", desc: "", price: 10.50 },
-                    { id: 171, categoryName: "Wrap", name: "NY Giants Wrap", desc: "", price: 9.00 },
-                    { id: 172, categoryName: "Wrap", name: "Chicken Quesadillas Wrap", desc: "", price: 8.00 },
-                    { id: 173, categoryName: "Wrap", name: "Hip Hop Wrap", desc: "", price: 10.00 },
-                    { id: 174, categoryName: "Wrap", name: "Buffalo Style Wrap", desc: "", price: 8.50 },
-                    { id: 175, categoryName: "Wrap", name: "Chicken Chips Wrap", desc: "", price: 9.50 },
-                    { id: 176, categoryName: "Wrap", name: "West Palm Beach Wrap", desc: "", price: 9.00 },
-                    { id: 177, categoryName: "Wrap", name: "Baby Wrap", desc: "", price: 6.50 },
-                    { id: 178, categoryName: "Wrap", name: "High Class Wrap", desc: "", price: 8.50 },
-                    { id: 179, categoryName: "Wrap", name: "Chicago Wrap", desc: "", price: 9.50 },
-                    { id: 180, categoryName: "Wrap", name: "BBQ Chicken Wrap", desc: "", price: 8.50 },
-                    { id: 181, categoryName: "Wrap", name: "Belmar Wrap", desc: "", price: 11.00 },
-                    { id: 182, categoryName: "Wrap", name: "Chicken Caesar Wrap", desc: "", price: 7.50 },
-                    { id: 183, categoryName: "Wrap", name: "Tom’s River Wraps", desc: "", price: 10.50 }
-                ]
-            },
-            {
-                id: "specialita",
-                category: "Specialità",
-                items: [
-                    { id: 184, categoryName: "Specialità", name: "Family Style", desc: "Per Uno / Per Tre", price: 8.00 },
-                    { id: 185, categoryName: "Specialità", name: "Cool Ranch", desc: "Per Uno / Per Tre", price: 8.50 },
-                    { id: 186, categoryName: "Specialità", name: "Mr Potato", desc: "Per Uno / Per Tre", price: 8.50 },
-                    { id: 187, categoryName: "Specialità", name: "American Classic", desc: "Per Uno / Per Tre", price: 7.50 }
-                ]
-            },
-            {
-                id: "pizze-dessert",
-                category: "Pizze Dessert",
-                items: [
-                    { id: 188, categoryName: "Pizze Dessert", name: "Oreos Pizza", desc: "Personale / Familiare", price: 8.00 },
-                    { id: 189, categoryName: "Pizze Dessert", name: "Nutella’s", desc: "Personale / Familiare", price: 6.50 },
-                    { id: 190, categoryName: "Pizze Dessert", name: "Green Love", desc: "Personale / Familiare", price: 8.00 },
-                    { id: 191, categoryName: "Pizze Dessert", name: "Black and White", desc: "Personale / Familiare", price: 8.00 }
-                ]
-            },
-            {
-                id: "bevande",
-                category: "Bevande",
-                items: [
-                    { id: 192, categoryName: "Bevande", name: "Coca-Cola Original Taste PET 1,5 L", desc: "", price: 3.50 },
-                    { id: 193, categoryName: "Bevande", name: "Sprite PET 1,5 L", desc: "", price: 3.50 },
-                    { id: 194, categoryName: "Bevande", name: "Sprite Sleek Can 330 ml", desc: "", price: 2.50 },
-                    { id: 195, categoryName: "Bevande", name: "Coca-Cola Sleek 33cl", desc: "", price: 2.50 },
-                    { id: 196, categoryName: "Bevande", name: "Acqua Naturale 50cl", desc: "", price: 1.50 },
-                    { id: 197, categoryName: "Bevande", name: "Bibita in Lattina 33cl Chinotto", desc: "", price: 2.50 },
-                    { id: 198, categoryName: "Bevande", name: "Bibita in Lattina 33cl Tè al Limone", desc: "", price: 2.50 },
-                    { id: 199, categoryName: "Bevande", name: "Bibita in Lattina 33cl Tè alla Pesca", desc: "", price: 2.50 },
-                    { id: 200, categoryName: "Bevande", name: "Fanta Original Sleek 33 cl", desc: "", price: 2.50 }
-                ]
-            },
-            {
-                id: "birre",
-                category: "Birre",
-                items: [
-                    { id: 201, categoryName: "Birre", name: "Birra 33cl Heineken", desc: "", price: 3.00 },
-                    { id: 202, categoryName: "Birre", name: "Birra 33cl Ceres", desc: "", price: 4.00 },
-                    { id: 203, categoryName: "Birre", name: "Birra 33cl Ichnusa", desc: "", price: 4.00 },
-                    { id: 204, categoryName: "Birre", name: "Birra 33cl Beck’s 33cl", desc: "", price: 3.00 },
-                    { id: 205, categoryName: "Birre", name: "Heineken 66cl", desc: "", price: 3.50 },
-                    { id: 206, categoryName: "Birre", name: "Moretti 66cl", desc: "", price: 3.50 }
-                ]
+        const rawMenuData = [
+          {
+            "categoria": "Pizze",
+            "prodotto": "Caprese Agro-Sarnese",
+            "ingredienti": "pomodoro San Marzano, pecorino stagionato, origano siciliano; in uscita mozzarella di bufala D.O.P., pomodoro secco sott’olio, caviale di pesto di basilico, rucola",
+            "prezzi": [
+              { "prezzo": 12.0, "variante": "Personale" },
+              { "prezzo": 14.0, "variante": "Gluten free" },
+              { "prezzo": 14.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Marinara elegante D.O.P.",
+            "ingredienti": "pomodoro San Marzano D.O.P., origano siciliano, stracciatella di bufala D.O.P., acciughe di aspra (La Perla), perlage di basilico, olio biologico locale",
+            "prezzi": [
+              { "prezzo": 11.0, "variante": "Personale" },
+              { "prezzo": 13.5, "variante": "Gluten free" },
+              { "prezzo": 13.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "La Quinta Margherita",
+            "ingredienti": "salsa di pomodoro giallo, fiordilatte, grana padana, pomodorini confit, pesto di basilico fresco",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 18.5, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Gluten free" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Queen Margherita D.O.P.",
+            "ingredienti": "pomodoro San Marzano D.O.P., pecorino romano stagionato, mozzarella di bufala campana D.O.P., basilico, olio biologico locale",
+            "prezzi": [
+              { "prezzo": 10.5, "variante": "Personale" },
+              { "prezzo": 21.0, "variante": "Familiare" },
+              { "prezzo": 13.0, "variante": "Gluten free" },
+              { "prezzo": 12.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Margherita 1983",
+            "ingredienti": "salsa di pomodoro giallo, mozzarella di bufala, pesto di pistacchio, mandorle tostate, basilico",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 19.5, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Gluten free" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Margherita 23",
+            "ingredienti": "pomodoro, provola di Agerola affumicata; in uscita burrata, granella e pesto di nocciole, basilico",
+            "prezzi": [
+              { "prezzo": 10.5, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 13.0, "variante": "Gluten free" },
+              { "prezzo": 12.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Margherita classica",
+            "ingredienti": "pomodoro e mozzarella fiordilatte",
+            "prezzi": [
+              { "prezzo": 6.0, "variante": "Personale" },
+              { "prezzo": 12.5, "variante": "Familiare" },
+              { "prezzo": 8.0, "variante": "Gluten free" },
+              { "prezzo": 8.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Naples",
+            "ingredienti": "pomodoro, mozzarella e acciughe",
+            "prezzi": [
+              { "prezzo": 6.5, "variante": "Personale" },
+              { "prezzo": 13.0, "variante": "Familiare" },
+              { "prezzo": 9.0, "variante": "Gluten free" },
+              { "prezzo": 8.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Romana",
+            "ingredienti": "pomodoro, mozzarella fiordilatte e prosciutto cotto",
+            "prezzi": [
+              { "prezzo": 7.5, "variante": "Personale" },
+              { "prezzo": 15.5, "variante": "Familiare" },
+              { "prezzo": 9.5, "variante": "Gluten free" },
+              { "prezzo": 9.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Diavola",
+            "ingredienti": "pomodoro, mozzarella fiordilatte e salamino piccante",
+            "prezzi": [
+              { "prezzo": 7.5, "variante": "Personale" },
+              { "prezzo": 15.5, "variante": "Familiare" },
+              { "prezzo": 9.5, "variante": "Gluten free" },
+              { "prezzo": 9.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Don Calogero",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, salamino piccante e salsiccia",
+            "prezzi": [
+              { "prezzo": 8.0, "variante": "Personale" },
+              { "prezzo": 16.5, "variante": "Familiare" },
+              { "prezzo": 10.0, "variante": "Gluten free" },
+              { "prezzo": 10.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "4 Gusti",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, prosciutto cotto, wurstel, funghi, origano e olio extravergine d'oliva",
+            "prezzi": [
+              { "prezzo": 8.0, "variante": "Personale" },
+              { "prezzo": 16.0, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Gluten free" },
+              { "prezzo": 10.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Capricciosa",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, prosciutto cotto, wurstel, carciofi, funghi, olive, origano e olio extravergine d'oliva",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.0, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Gluten free" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Bresa Hola Pizza",
+            "ingredienti": "mozzarella fiordilatte, bresaola punta d'anca, rucola, scaglie di grana, limone e olio extravergine d'oliva",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 20.0, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Eggplant Parmigiana",
+            "ingredienti": "pomodoro, mozzarella, melanzane fritte, pecorino romano, ricotta e basilico fresco",
+            "prezzi": [
+              { "prezzo": 8.0, "variante": "Personale" },
+              { "prezzo": 16.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Gluten free" },
+              { "prezzo": 10.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Orto Bio",
+            "ingredienti": "mozzarella fiordilatte, polpa di pomodoro, zucchine, melanzane fritte, ricotta e mandorle",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 18.5, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "San Francesco",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, prosciutto crudo di Parma, scaglie di grana, rucola e olio extravergine d'oliva",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 18.0, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Gluten free" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Parmigiana",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, melanzane fritte e grana padano",
+            "prezzi": [
+              { "prezzo": 8.0, "variante": "Personale" },
+              { "prezzo": 16.0, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Gluten free" },
+              { "prezzo": 10.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Veggy Pizza",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, funghi, cipolle, peperoni, olive, melanzane e spinaci",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.0, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Gluten free" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Patabom",
+            "ingredienti": "pomodoro, mozzarella e patatine fritte",
+            "prezzi": [
+              { "prezzo": 7.5, "variante": "Personale" },
+              { "prezzo": 15.5, "variante": "Familiare" },
+              { "prezzo": 9.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Bianca",
+            "ingredienti": "mozzarella fiordilatte",
+            "prezzi": [
+              { "prezzo": 5.5, "variante": "Personale" },
+              { "prezzo": 10.5, "variante": "Familiare" },
+              { "prezzo": 8.0, "variante": "Gluten free" },
+              { "prezzo": 7.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "4 Cheese",
+            "ingredienti": "mozzarella fiordilatte, provoletta, ricotta, pecorino e gorgonzola",
+            "prezzi": [
+              { "prezzo": 8.0, "variante": "Personale" },
+              { "prezzo": 16.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Gluten free" },
+              { "prezzo": 10.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Sfincione Modern Pizza",
+            "ingredienti": "crema di cipolle caramellate, mozzarella, acciughe, ricotta, tocchetti di tuma panata e fritta, pecorino grattugiato e origano",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 18.5, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze",
+            "prodotto": "Aspra Mare",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, tonno in olio d’oliva, cipolle rosse e olive verdi",
+            "prezzi": [
+              { "prezzo": 8.0, "variante": "Personale" },
+              { "prezzo": 16.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Gluten free" },
+              { "prezzo": 10.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Cuzin Tano",
+            "ingredienti": "mozzarella di bufala, alfredo sauce, salsiccia, bacon; all’uscita rucola e prosciutto crudo di Parma",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Don Francisco Taco",
+            "ingredienti": "mozzarella fiordilatte, carne taco piccante, bruschetta, lattuga, cheddar e buffalo sauce",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 11.58, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Mango Habanero Chicken Pizza",
+            "ingredienti": "mango habanero sauce, pollo fritto, bacon, cipolla rossa a cubetti, mozzarella fiordilatte; in uscita ranch dressing",
+            "prezzi": [
+              { "prezzo": 11.5, "variante": "Personale" },
+              { "prezzo": 24.5, "variante": "Familiare" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Buffalo Bill Chicken",
+            "ingredienti": "mozzarella fiordilatte, pollo piccante al buffalo sauce, cheddar e blue cheese",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Grandma NCY Pizza",
+            "ingredienti": "mozzarella fiordilatte, pomodoro polpa, basilico fresco, pecorino e olio extravergine d'oliva",
+            "prezzi": [
+              { "prezzo": 7.0, "variante": "Personale" },
+              { "prezzo": 15.5, "variante": "Familiare" },
+              { "prezzo": 9.5, "variante": "Gluten free" },
+              { "prezzo": 9.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "BBQ Chicken",
+            "ingredienti": "mozzarella fiordilatte, pollo al barbecue e cheddar cheese",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Chicken Parm",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, pollo fritto, pecorino romano e basilico",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Sicilian in New Jersey",
+            "ingredienti": "mozzarella fiordilatte, salsiccia, spinaci, pomodorini, limone e rucola",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Gluten free" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Chicken & Pesto",
+            "ingredienti": "mozzarella fiordilatte, pollo fritto, pomodoro, bruschetta e pesto di basilico",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Only Meat Lover",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, salsiccia, prosciutto cotto DOC, salsiccia piccante, bacon e wurstel",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Chicken Rancho",
+            "ingredienti": "mozzarella fiordilatte, pollo fritto, ranch dressing, bacon e cheddar cheese",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Heart Attack",
+            "ingredienti": "mozzarella, salsa segreta al barbecue, patatine fritte, pollo fritto, anelli di cipolla, mozzarella sticks, bacon e ranch",
+            "prezzi": [
+              { "prezzo": 11.5, "variante": "Personale" },
+              { "prezzo": 23.0, "variante": "Familiare" },
+              { "prezzo": 13.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Pizza Mania Original",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, funghi, cipolle, peperoni, salsiccia, prosciutto cotto DOC e salsiccia piccante",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Potato & Onion Deluxe",
+            "ingredienti": "mozzarella, patate a spicchi fritte, cipolle, salsiccia e salsa buffalo ranch",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 18.5, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Greenfield",
+            "ingredienti": "misto 4 formaggi (mozzarella, provoletta, gorgonzola, pecorino), funghi, bacon; all’uscita pesto e granella di pistacchi",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Stuffed Meat Pizza Familiare Ripiena",
+            "ingredienti": "mozzarella fiordilatte, prosciutto cotto, salsiccia, salamino piccante, bacon (ripieno); sopra salsa di pomodoro, mozzarella, würstel",
+            "prezzi": [
+              { "prezzo": 25.0 }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Chicken Caesar Crust",
+            "ingredienti": "mozzarella fiordilatte, pollo alla griglia, lattuga romana, pecorino e caesar dressing",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Gluten free" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Tropical Hawaiian",
+            "ingredienti": "mozzarella fiordilatte, ricotta, bacon e ananas a cubetti",
+            "prezzi": [
+              { "prezzo": 7.5, "variante": "Personale" },
+              { "prezzo": 15.5, "variante": "Familiare" },
+              { "prezzo": 9.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Twenty Miles",
+            "ingredienti": "mozzarella fiordilatte, alfredo sauce, pollo fritto, bacon e cheddar",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Sweet Alabama",
+            "ingredienti": "pollo fritto, bacon, mozzarella, cheddar e honey mustard dressing",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 19.0, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Las Vegas Nevada",
+            "ingredienti": "mozzarella fiordilatte, alfredo sauce, bacon, patate e cheddar",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Brooklyn Original",
+            "ingredienti": "mozzarella fiordilatte, provoletta, pomodoro, origano e pecorino",
+            "prezzi": [
+              { "prezzo": 7.0, "variante": "Personale" },
+              { "prezzo": 14.5, "variante": "Familiare" },
+              { "prezzo": 9.5, "variante": "Gluten free" },
+              { "prezzo": 9.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "French Fries Pie",
+            "ingredienti": "mozzarella fiordilatte, salsa rosa, patatine fritte, bacon e cheddar",
+            "prezzi": [
+              { "prezzo": 8.5, "variante": "Personale" },
+              { "prezzo": 17.5, "variante": "Familiare" },
+              { "prezzo": 10.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Cheese Steak and Bake",
+            "ingredienti": "mozzarella fiordilatte, bistecca sfilettata cheesesteak con cipolle, funghi, peperoni e cheddar",
+            "prezzi": [
+              { "prezzo": 11.0, "variante": "Personale" },
+              { "prezzo": 23.5, "variante": "Familiare" },
+              { "prezzo": 13.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Americane",
+            "prodotto": "Chips Pizza",
+            "ingredienti": "mozzarella fiordilatte, patatine chips classiche, salsa rosa, salsa ranch, cheddar e pollo fritto",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 18.5, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Bronx",
+            "ingredienti": "mozzarella di bufala, cipolle; all’uscita rucola, grana, prosciutto cotto all’erbette aromatiche e mandorle tostate",
+            "prezzi": [
+              { "prezzo": 10.5, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Orton Zola",
+            "ingredienti": "mozzarella fiordilatte, fonduta di gorgonzola, zucchine, melanzane, mandorle e pesto di basilico",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 20.0, "variante": "Familiare" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "La Maria",
+            "ingredienti": "polpa di pomodoro giallo; mix formaggi (provola, gorgonzola, fiordilatte) in uscita; pomodorini, pesto di pistacchio, grana e prosciutto crudo di Parma 18 mesi",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "October Fest Pizza",
+            "ingredienti": "crema di zucca, mozzarella di bufala, chips di zucchine, speck; burrata, rucola, mandorle tostate e crema di cipolle caramellate",
+            "prezzi": [
+              { "prezzo": 12.0, "variante": "Personale" },
+              { "prezzo": 25.5, "variante": "Familiare" },
+              { "prezzo": 14.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Atlantic City Pizza",
+            "ingredienti": "polpa di pomodoro giallo, provola di Agerola; in uscita pecorino stagionato, mandorle tostate, pomodoro secco, acciughe, ciliegino di fiordilatte, basilico, filetti di peperoncino",
+            "prezzi": [
+              { "prezzo": 12.0 }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Malcolm Ave",
+            "ingredienti": "crema di zucca, mozzarella di bufala DOP, bacon, pistacchio e basilico",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Focarcina",
+            "ingredienti": "pomodoro, mozzarella di bufala DOP, funghi porcini; all’uscita prosciutto crudo di Parma e rucola",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Raffinata",
+            "ingredienti": "mozzarella di bufala, funghi, ciliegino, rucola, prosciutto crudo, glassa balsamica, pecorino romano e olio evo",
+            "prezzi": [
+              { "prezzo": 11.0, "variante": "Personale" },
+              { "prezzo": 22.5, "variante": "Familiare" },
+              { "prezzo": 13.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Romana Luxury",
+            "ingredienti": "salsa di pomodoro giallo, provola di Agerola; in uscita prosciutto cotto aromatizzato, pesto+granella di nocciole, sesamo nero, fiocchi di pomodoro, filetti di peperoncino, burrata, basilico",
+            "prezzi": [
+              { "prezzo": 13.5, "variante": "Personale" },
+              { "prezzo": 15.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Saint Thomas",
+            "ingredienti": "mozzarella di bufala DOP, cipolle, gorgonzola; all’uscita mortadella, mandorle tostate, granella+pesto di pistacchio, miele",
+            "prezzi": [
+              { "prezzo": 11.5, "variante": "Personale" },
+              { "prezzo": 24.5, "variante": "Familiare" },
+              { "prezzo": 13.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Pumpkin Pizza",
+            "ingredienti": "crema di zucca rossa, datterino rosso, speck e rucola",
+            "prezzi": [
+              { "prezzo": 9.0, "variante": "Personale" },
+              { "prezzo": 19.5, "variante": "Familiare" },
+              { "prezzo": 11.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "N'farinati Originale",
+            "ingredienti": "mozzarella fiordilatte, salsiccia, bacon, cipolle, rucola e buffalo ranch piccante",
+            "prezzi": [
+              { "prezzo": 9.5, "variante": "Personale" },
+              { "prezzo": 20.0, "variante": "Familiare" },
+              { "prezzo": 12.0, "variante": "Gluten free" },
+              { "prezzo": 11.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Guancia-Tella",
+            "ingredienti": "Salsa di pomodoro San Marzano dell'agro Sarnese Nocerino D.O.P., provola di Agerola affumicata. In uscita: guanciale croccante, stracciatella di bufala D.O.P., perlage di basilico, grana padano",
+            "prezzi": [
+              { "prezzo": 12.5, "variante": "Personale" },
+              { "prezzo": 14.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Serenata",
+            "ingredienti": "mozzarella fiordilatte, fonduta di gorgonzola, pere, prosciutto crudo, noci, rucola e glassa balsamica",
+            "prezzi": [
+              { "prezzo": 10.5, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 13.0, "variante": "Gluten free" },
+              { "prezzo": 12.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "South Beach",
+            "ingredienti": "mozzarella di bufala DOP, crema di cipolle caramellate; in uscita rucola, cotto alle erbette, pomodoro secco, ciliegine di mozzarella, burrata, pesto e granella di pistacchio",
+            "prezzi": [
+              { "prezzo": 12.0, "variante": "Personale" },
+              { "prezzo": 25.5, "variante": "Familiare" },
+              { "prezzo": 14.5, "variante": "Gluten free" },
+              { "prezzo": 14.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Sole Giallo",
+            "ingredienti": "polpa di pomodoro giallo, mozzarella di bufala; all’uscita rucola e prosciutto cotto alle erbette",
+            "prezzi": [
+              { "prezzo": 10.5, "variante": "Personale" },
+              { "prezzo": 20.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Porcini Mushroom",
+            "ingredienti": "mozzarella di bufala, crema di porcini, radicchio e speck",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 21.0, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Wall Street Pizza",
+            "ingredienti": "salsa di datterino giallo; in uscita mozzarella di bufala DOP, speck, chips di zucchine croccanti, noci, miele",
+            "prezzi": [
+              { "prezzo": 11.0, "variante": "Personale" },
+              { "prezzo": 23.5, "variante": "Familiare" },
+              { "prezzo": 13.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Murtade'",
+            "ingredienti": "mozzarella di bufala, crema di ricotta e pistacchio in cottura; in uscita mortadella, granella di pistacchio, rucola, pesto di pistacchio",
+            "prezzi": [
+              { "prezzo": 10.0, "variante": "Personale" },
+              { "prezzo": 21.5, "variante": "Familiare" },
+              { "prezzo": 12.5, "variante": "Gluten free" },
+              { "prezzo": 12.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Gourmet",
+            "prodotto": "Lady Brown Pizza",
+            "ingredienti": "provola di Agerola affumicata; in uscita radicchio, mortadella, pesto+granella di nocciola, pomodoro secco in olio, ciliegino di mozzarella, basilico",
+            "prezzi": [
+              { "prezzo": 12.0, "variante": "Personale" },
+              { "prezzo": 25.5, "variante": "Familiare" },
+              { "prezzo": 14.5, "variante": "Gluten free" },
+              { "prezzo": 14.0, "variante": "Impasto integrale ai semi misti" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Naples SG",
+            "ingredienti": "pomodoro, mozzarella e acciughe",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Sicilian in New Jersey SG",
+            "ingredienti": "mozzarella fiordilatte, salsiccia, spinaci, pomodorini, limone e rucola",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Aspra Mare SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, tonno in olio d’oliva, cipolle rosse e olive verdi",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "La Maria SG",
+            "ingredienti": "polpa di pomodoro giallo; mix formaggi (provola, gorgonzola, fiordilatte) in uscita; pomodorini, pesto di pistacchio, grana e prosciutto crudo di Parma 18 mesi",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "San Francesco SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, prosciutto crudo di Parma, scaglie di grana, rucola e olio extravergine d'oliva",
+            "prezzi": [ { "prezzo": 11.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Parmigiana SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, melanzane fritte e grana padano",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Brooklyn Original SG",
+            "ingredienti": "mozzarella fiordilatte, provoletta, pomodoro, origano e pecorino",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Serenata SG",
+            "ingredienti": "mozzarella fiordilatte, fonduta di gorgonzola, pere, prosciutto crudo, noci, rucola e glassa balsamica",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Veggy Pizza SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, funghi, cipolle, peperoni, olive, melanzane e spinaci",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Murtade' SG",
+            "ingredienti": "mozzarella di bufala, crema di ricotta e pistacchio in cottura; in uscita mortadella, granella di pistacchio, rucola, pesto di pistacchio",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "4 Gusti SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, prosciutto cotto, wurstel, funghi, origano e olio extravergine d'oliva",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Diavola SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte e salamino piccante",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Only Meat Lover SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, salsiccia, prosciutto cotto DOC, salsiccia piccante, bacon e wurstel",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Eggplant Parmigiana SG",
+            "ingredienti": "pomodoro, mozzarella, melanzane fritte, pecorino romano, ricotta e basilico fresco",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Romana SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte e prosciutto cotto",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Capricciosa SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, prosciutto cotto, wurstel, carciofi, funghi, olive, origano e olio extravergine d'oliva",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Malcolm Ave SG",
+            "ingredienti": "crema di zucca, mozzarella di bufala DOP, bacon, pistacchio e basilico",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Bianca SG",
+            "ingredienti": "mozzarella fiordilatte",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Greenfield SG",
+            "ingredienti": "misto 4 formaggi (mozzarella, provoletta, gorgonzola, pecorino), funghi, bacon; all’uscita pesto e granella di pistacchi",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "4 Cheese SG",
+            "ingredienti": "mozzarella fiordilatte, provoletta, ricotta, pecorino e gorgonzola",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Don Calogero SG",
+            "ingredienti": "pomodoro, mozzarella fiordilatte, salamino piccante e salsiccia",
+            "prezzi": [ { "prezzo": 10.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "South Beach SG",
+            "ingredienti": "mozzarella di bufala DOP, crema di cipolle caramellate; in uscita rucola, cotto alle erbette, pomodoro secco, ciliegine di mozzarella, burrata, pesto e granella di pistacchio",
+            "prezzi": [ { "prezzo": 14.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Chicken Caesar Crust SG",
+            "ingredienti": "mozzarella fiordilatte, pollo alla griglia, lattuga romana, pecorino e caesar dressing",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Bresa Hola Pizza SG",
+            "ingredienti": "mozzarella fiordilatte, bresaola punta d'anca, rucola, scaglie di grana, limone e olio extravergine d'oliva",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Grandma NCY Pizza SG",
+            "ingredienti": "mozzarella fiordilatte, pomodoro polpa, basilico fresco, pecorino e olio extravergine d'oliva",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Senza Glutine",
+            "prodotto": "Margherita classica SG",
+            "ingredienti": "pomodoro e mozzarella fiordilatte",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Calzoni",
+            "prodotto": "Ham & Cheese Calzone",
+            "ingredienti": "mozzarella fiordilatte e prosciutto cotto DOC",
+            "prezzi": [ { "prezzo": 7.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Calzoni",
+            "prodotto": "BBQ Chicken Calzone",
+            "ingredienti": "mozzarella, pollo fritto, salsa BBQ",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Calzoni",
+            "prodotto": "Buffalo Chicken Calzone",
+            "ingredienti": "mozzarella fiordilatte e pollo fritto al buffalo piccante",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Calzoni",
+            "prodotto": "Veggie Calzone",
+            "ingredienti": "mozzarella fiordilatte, funghi, cipolle, spinaci, peperoni, olive e carciofi",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Calzoni",
+            "prodotto": "Hot Boy Calzone",
+            "ingredienti": "mozzarella fiordilatte, salsiccia piccante, peperoni, salsiccia e cipolle",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Chicken Nuggets",
+            "ingredienti": "bocconcini di pollo (8 pezzi)",
+            "prezzi": [ { "prezzo": 6.0, "variante": "8 pezzi" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Jalapeños Red Hot",
+            "ingredienti": "jalapeños ripieni al formaggio, panati e fritti (6 pezzi)",
+            "prezzi": [ { "prezzo": 6.5, "variante": "6 pezzi" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Pizza Fries",
+            "ingredienti": "patate curly aromatizzate alla cipolla + salsa di pomodoro, mozzarella fiordilatte, salamino piccante",
+            "prezzi": [ { "prezzo": 6.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Crazy Fries",
+            "ingredienti": "patatine fritte, wurstel fritti, bacon, salsa rosa Ranch, mozzarella, sottilette e cheddar",
+            "prezzi": [ { "prezzo": 7.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Mozzarella Sticks",
+            "ingredienti": "listelle di mozzarella home made, panate e fritte (6 pezzi)",
+            "prezzi": [ { "prezzo": 5.0, "variante": "6 pezzi" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Seasoned Fries (spicchi spicy)",
+            "ingredienti": "spicchi di patate con buccia e rivestimento speziato",
+            "prezzi": [
+              { "prezzo": 3.5, "variante": "1 porzione" },
+              { "prezzo": 4.5, "variante": "2 porzioni" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Cheese Fries",
+            "ingredienti": "patatine fritte con cheddar fuso",
+            "prezzi": [ { "prezzo": 4.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "French Fries",
+            "ingredienti": "patatine fritte",
+            "prezzi": [
+              { "prezzo": 2.0, "variante": "1 porzione" },
+              { "prezzo": 3.0, "variante": "2 porzioni" }
+            ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Combo Platter",
+            "ingredienti": "chicken wings 2 pz, mozzarella sticks 2 pz, nuggets 2 pz, onion rings 2 pz e patatine fritte",
+            "prezzi": [ { "prezzo": 7.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Onion Rings",
+            "ingredienti": "anelli di cipolla fritti home made",
+            "prezzi": [ { "prezzo": 4.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Chicken Wings",
+            "ingredienti": "alette di pollo fritte (6 pezzi)",
+            "prezzi": [ { "prezzo": 6.0, "variante": "6 pezzi" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Patate Surecrisp Fry'n Dip Con Buccia",
+            "ingredienti": "bastoncini di patate concavi con buccia e rivestimento croccante",
+            "prezzi": [ { "prezzo": 4.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Chicken Fingers",
+            "ingredienti": "straccetti di pollo croccanti (8 pezzi)",
+            "prezzi": [ { "prezzo": 6.5, "variante": "8 pezzi" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Sweet Potato Fries",
+            "ingredienti": "patate dolci fritte con rivestimento croccante",
+            "prezzi": [ { "prezzo": 5.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Wurstel alla Griglia",
+            "ingredienti": "wurstel grigliati con olio, limone, sale, pepe e origano",
+            "prezzi": [ { "prezzo": 5.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Crostini di Tuma Fritta",
+            "ingredienti": "stick di tuma panata e fritta (6 pezzi)",
+            "prezzi": [ { "prezzo": 6.5, "variante": "6 pezzi" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Misto Caldo",
+            "ingredienti": "panelle, crocchette e patatine",
+            "prezzi": [ { "prezzo": 6.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Curly Fries",
+            "ingredienti": "patate a spirale con aromi speciali",
+            "prezzi": [ { "prezzo": 5.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Appetizers",
+            "prodotto": "Franky Fries",
+            "ingredienti": "patatine fritte, bacon, sottilette, mozzarella, ranch e cheddar",
+            "prezzi": [ { "prezzo": 6.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Insalate",
+            "prodotto": "Burger Salad",
+            "ingredienti": "lattuga, burger di vitello, crispy bacon, funghi freschi, pomodorini, ciliegino di fiordilatte, ceasar dressing",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Insalate",
+            "prodotto": "Cesar Palace Salad",
+            "ingredienti": "lattuga, pollo grigliato, bacon croccante, Cesar dressing, pecorino stagionato",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Insalate",
+            "prodotto": "Los Angeles Salad",
+            "ingredienti": "lattuga, crudo di Parma, pomodorini, chips di zucchine, mozzarella di bufala, pesto+granella di pistacchio",
+            "prezzi": [ { "prezzo": 14.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Insalate",
+            "prodotto": "Finest Salad",
+            "ingredienti": "lattuga, rucola, radicchio, scaglie di grana, bresaola punta d’anca, mandorle tostate, funghi freschi, glassa balsamica",
+            "prezzi": [ { "prezzo": 14.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Insalate",
+            "prodotto": "Midland Salad",
+            "ingredienti": "lattuga, pollo grigliato, pomodorini, avocado, scaglie di grana, ciliegino di fiordilatte, salsa yogurt",
+            "prezzi": [ { "prezzo": 12.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Insalate",
+            "prodotto": "Crispy Salad",
+            "ingredienti": "lattuga, pollo croccante, crispy bacon, cipolla rossa cruda, avocado, ciliegino di fiordilatte, ranch dressing",
+            "prezzi": [ { "prezzo": 14.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Mini burgers",
+            "prodotto": "Mini Chicken 2",
+            "ingredienti": "mini buns + anelli di pollo, cheddar, salsa rosa, anelli di cipolla",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": { "Patatine": [ { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ] }
+          },
+          {
+            "categoria": "Mini burgers",
+            "prodotto": "Mini Burger 1",
+            "ingredienti": "Mini buns produzione nostra con mini smashed cheeseburger con cheddar e salsa rosa",
+            "prezzi": [ { "prezzo": 2.0 } ],
+            "scelte_obbligatorie": { "Patatine": [ { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ] }
+          },
+          {
+            "categoria": "Mini burgers",
+            "prodotto": "Mini Chicken 1",
+            "ingredienti": "Mini buns produzione nostra con anelli di pollo Amadori prima scelta, cheddar e salsa rosa",
+            "prezzi": [ { "prezzo": 2.0 } ],
+            "scelte_obbligatorie": { "Patatine": [ { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ] }
+          },
+          {
+            "categoria": "Mini burgers",
+            "prodotto": "Mini Burger 2",
+            "ingredienti": "mini buns + smashed cheeseburger, cheddar, bacon, salsa rosa",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": { "Patatine": [ { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ] }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Drive in Burger",
+            "ingredienti": "burger di vitello, cheddar, salamino piccante, bacon, lattuga, cipolla rossa, pomodoro, Peppery White BBQ",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
             }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Pistacchino Burger",
+            "ingredienti": "Hamburger di vitello, mortadella, burrata, radicchio, pesto di pistacchio, servito con patatine al pistacchio",
+            "prezzi": [ { "prezzo": 13.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Country Burger",
+            "ingredienti": "hamburger di vitello, emmental, carote, chips di zucchine, chipotle mayo, rucola",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Greta Burger",
+            "ingredienti": "hamburger di vitello, avocado, funghi, cipolle, cheddar, rucola, chipotle mayo",
+            "prezzi": [ { "prezzo": 10.0 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Fat Bastard Burger",
+            "ingredienti": "doppio burger, sottiletta, onion rings, bacon, cheddar, barbecue maionese, lattuga",
+            "prezzi": [ { "prezzo": 13.0 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "GB Style Burger",
+            "ingredienti": "Burger, emmental, salsa rosa, pomodorini, lattuga a filetti e cipolle",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "The Lo Galbo's Burger",
+            "ingredienti": "burger, cheddar, salsa rosa, lattuga a filetti e pomodoro a fette",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Jersey Boy Burger",
+            "ingredienti": "burger, peperoni, cipolla, funghi, emmental, lattuga a filetti, pomodoro",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Sinaloa Mexico Burger",
+            "ingredienti": "burger, bruschetta, salsa buffalo, salsiccia piccante, avocado, lattuga a filetti e cheddar",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "Good Fellas Burger",
+            "ingredienti": "burger, mozzarella, radicchio, spinaci, bacon, funghi, chipotle mayo",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "N'farinati Original Burger",
+            "ingredienti": "burger di vitello, salsa chipotle, avocado, bacon, funghi, onion rings, rucola, mozzarella filante",
+            "prezzi": [ { "prezzo": 10.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "American Hamburger",
+            "prodotto": "New York Times Burger",
+            "ingredienti": "burger, bacon, onion rings, salsa barbecue, sottilette, lattuga a filetti",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {
+              "Cottura burger": [ { "valore": "Al Sangue", "supplemento": 0.0 }, { "valore": "Ben Cotto", "supplemento": 0.0 }, { "valore": "Medio", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Chicken BLT American Classic",
+            "ingredienti": "pollo fritto, bacon, lattuga a filetti, pomodoro, olio, sale e pepe",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "California Chicken American Classic",
+            "ingredienti": "pollo fritto, lattuga a filetti, pomodoro, cipolla rossa cruda, maionese, olio, sale e pepe",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Grilled Chicken",
+            "ingredienti": "pollo grigliato, peperoni, funghi, cipolle, emmental, misticanza",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Heavy Hitter Piccante",
+            "ingredienti": "pollo fritto marinato buffalo, cipolle, funghi, emmental, salsa ranch, lattuga a filetti, pomodoro",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Italian Hot Dog Italo Americano",
+            "ingredienti": "wurstel arrostiti, cipolle, peperoni, patatine fritte, cheddar",
+            "prezzi": [ { "prezzo": 7.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Hot Dog Maxi",
+            "ingredienti": "hot dog, mostarda, ketchup",
+            "prezzi": [ { "prezzo": 6.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Chicken Bacon Ranch Most Loved Sandwich",
+            "ingredienti": "pollo fritto, bacon croccante, salsa ranch, lattuga a filetti, pomodoro a fette",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Chicken Parm American Finest",
+            "ingredienti": "pollo fritto, salsa di pomodoro, mozzarella fiordilatte filante, pecorino romano, basilico",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Fat Bastard Per i Più Giovani",
+            "ingredienti": "pollo fritto, bacon croccante, salamino piccante, patatine fritte, mozzarella sticks, salsa barbecue, cheddar",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Americani",
+            "prodotto": "Cardiac Arrest Per i Più Giovani",
+            "ingredienti": "chicken fingers, mozzarella sticks, onion rings, patatine fritte, salsa ranch, sottiletta, buffalo sauce",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "Bacon Ranch",
+            "ingredienti": "carne di vitello sfilacciata philly style, cheddar, cipolla, bacon, ranch dressing, lattuga, pomodoro",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "Southern Style",
+            "ingredienti": "carne di vitello sfilacciata philly style, mozzarella fiordilatte, peperoni, funghi, cipolle fritte croccanti, salsa BBQ, lattuga",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "Original Philly Sandwich",
+            "ingredienti": "carne di vitello sfilacciata philly style, mozzarella fiordilatte, peperoni, cipolle, funghi",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "Cheesesteak on Steroids",
+            "ingredienti": "carne di vitello sfilacciata philly style, cheddar, funghi, peperoni, cipolle, patatine fritte, salsa BBQ Mayo",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "California Style",
+            "ingredienti": "carne di vitello sfilacciata philly style, mozzarella fiordilatte, lattuga, pomodoro a fette, maionese",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "'Nfari Steak Sandwich",
+            "ingredienti": "carne di vitello sfilacciata philly style, sottiletta, bacon, funghi, cipolle, rucola, pomodoro a fette",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "Devil Melt",
+            "ingredienti": "carne di vitello sfilacciata philly style, emmental, buffalo piccante, salamino piccante, lattuga, pomodoro",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Philly Style Cheesesteaks",
+            "prodotto": "Cheesesteak",
+            "ingredienti": "carne di vitello sfilacciata philly style, mozzarella fiordilatte",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino Piccantino",
+            "ingredienti": "salamino piccante, mozzarella, tabasco, cipolle in padella, lattuga",
+            "prezzi": [ { "prezzo": 7.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino 'Nfarinati Special",
+            "ingredienti": "mortadella, mozzarella di bufala, crema di cipolle caramellate, radicchio, granella di pistacchio",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino Cartoccio",
+            "ingredienti": "prosciutto, mozzarella e salsa a scelta",
+            "prezzi": [ { "prezzo": 5.0 } ],
+            "scelte_obbligatorie": {
+              "Salsa": [ { "valore": "Ketchup", "supplemento": 0.0 }, { "valore": "Maionese", "supplemento": 0.0 }, { "valore": "Salsa rosa", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Sofisticato",
+            "ingredienti": "prosciutto crudo di Parma, chips di zucchine, mozzarella di bufala, rucola, pesto di pistacchio",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino Alessio Player",
+            "ingredienti": "patatine fritte, cheddar",
+            "prezzi": [ { "prezzo": 5.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino Tonno e Cipolla",
+            "ingredienti": "tonno in olio d’oliva, patè di olive, cipolle rosse crude, rucola, olio, sale, pepe, limone",
+            "prezzi": [ { "prezzo": 7.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino Bresa Hola",
+            "ingredienti": "bresaola punta d’anca, mozzarella di bufala, grana, rucola, limone, olio, sale e pepe",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino San Daniele",
+            "ingredienti": "prosciutto crudo di Parma, mozzarella, scaglie di grana, rucola, olio, sale e pepe",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Panini Piastrati",
+            "prodotto": "Panino Topolino",
+            "ingredienti": "prosciutto, wurstel, mozzarella e salsa a scelta",
+            "prezzi": [ { "prezzo": 5.5 } ],
+            "scelte_obbligatorie": {
+              "Salsa": [ { "valore": "Ketchup", "supplemento": 0.0 }, { "valore": "Maionese", "supplemento": 0.0 }, { "valore": "Salsa rosa", "supplemento": 0.0 } ],
+              "Patatine": [ { "valore": "Patate dolci (sweet potato)", "supplemento": 2.0 }, { "valore": "Curly fries", "supplemento": 2.5 }, { "valore": "Patate surecrisp", "supplemento": 1.5 }, { "valore": "Patate a spicchi piccanti", "supplemento": 2.0 }, { "valore": "Chips di patate fresche", "supplemento": 0.0 }, { "valore": "Patatine fritte surgelate", "supplemento": 1.0 } ]
+            }
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Pump It Up Wrap",
+            "ingredienti": "pollo alla griglia marinato, spinaci, funghi, mozzarella, radicchio, avocado, salsa yogurt",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Burger Wrap",
+            "ingredienti": "hamburger di vitello, bacon, cheddar, cipolle, lattuga, pomodoro, salsa rosa",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "NY Giants Wrap",
+            "ingredienti": "pollo fritto, cheddar, bacon, rucola, carote a filetti, cipolle, ranch dressing",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Chicken Quesadillas Wrap",
+            "ingredienti": "pollo alla griglia, cheddar, lattuga, pomodoro",
+            "prezzi": [ { "prezzo": 8.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Hip Hop Wrap",
+            "ingredienti": "pollo fritto, mozzarella sticks, onion rings, bacon, lattuga a filetti, maionese al barbecue, cheddar",
+            "prezzi": [ { "prezzo": 10.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Buffalo Style Wrap",
+            "ingredienti": "pollo fritto buffalo piccante, emmental, lattuga a filetti, pomodoro a fette, blue cheese dressing",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Chicken Chips Wrap",
+            "ingredienti": "pollo fritto croccante, chips di patate, bacon, salsa cheddar, ranch dressing, lattuga",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "West Palm Beach Wrap",
+            "ingredienti": "pollo fritto, mozzarella fiordilatte, lattuga a filetti, pomodorini, avocado e maionese",
+            "prezzi": [ { "prezzo": 9.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Baby Wrap",
+            "ingredienti": "prosciutto cotto, mozzarella, patatine fritte",
+            "prezzi": [ { "prezzo": 6.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "High Class Wrap",
+            "ingredienti": "prosciutto di Parma, grana a scaglie, rucola, pomodorini, mozzarella di bufala, glassa balsamica",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Chicago Wrap",
+            "ingredienti": "pollo fritto honey mustard homemade, bacon croccante, cheddar, lattuga a filetti",
+            "prezzi": [ { "prezzo": 9.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "BBQ Chicken Wrap",
+            "ingredienti": "pollo fritto al barbecue, patatine fritte, mozzarella, lattuga a filetti e cipolle",
+            "prezzi": [ { "prezzo": 8.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Belmar Wrap",
+            "ingredienti": "hamburger di vitello, cheddar, bacon, onion rings, crocchè di patate, honey mustard",
+            "prezzi": [ { "prezzo": 11.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Chicken Caesar Wrap",
+            "ingredienti": "pollo alla griglia marinato, lattuga, ceasar dressing, pecorino romano",
+            "prezzi": [ { "prezzo": 7.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Wrap",
+            "prodotto": "Tom's River Wraps",
+            "ingredienti": "pollo fritto croccante, chips di zucchine, chipotle mayo, guacamole, lattuga, patate a spicchi aromatizzate",
+            "prezzi": [ { "prezzo": 10.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Specialità",
+            "prodotto": "Family Style",
+            "ingredienti": "mozzarella, prosciutto cotto, funghi, salsiccia, salsiccia piccante, peperoni, cipolle",
+            "prezzi": [ { "prezzo": 8.0, "variante": "Per Uno" }, { "prezzo": 16.5, "variante": "Per Tre" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Specialità",
+            "prodotto": "Cool Ranch",
+            "ingredienti": "mozzarella fiordilatte, pollo fritto al ranch, bacon",
+            "prezzi": [ { "prezzo": 8.5, "variante": "Per Uno" }, { "prezzo": 17.5, "variante": "Per Tre" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Specialità",
+            "prodotto": "Mr Potato",
+            "ingredienti": "mozzarella, patatine fritte, pollo fritto, bacon, salsa barbecue",
+            "prezzi": [ { "prezzo": 8.5, "variante": "Per Uno" }, { "prezzo": 17.5, "variante": "Per Tre" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Specialità",
+            "prodotto": "American Classic",
+            "ingredienti": "mozzarella, salsiccia, salsiccia piccante",
+            "prezzi": [ { "prezzo": 7.5, "variante": "Per Uno" }, { "prezzo": 15.5, "variante": "Per Tre" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Dessert",
+            "prodotto": "Oreos Pizza",
+            "ingredienti": "nutella, oreo, smarties, zucchero a velo",
+            "prezzi": [ { "prezzo": 8.0, "variante": "Personale" }, { "prezzo": 16.5, "variante": "Familiare" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Dessert",
+            "prodotto": "Nutella's",
+            "ingredienti": "nutella, smarties, zucchero a velo",
+            "prezzi": [ { "prezzo": 6.5, "variante": "Personale" }, { "prezzo": 13.5, "variante": "Familiare" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Dessert",
+            "prodotto": "Green Love",
+            "ingredienti": "crema al pistacchio, mandorle, zucchero a velo",
+            "prezzi": [ { "prezzo": 8.0, "variante": "Personale" }, { "prezzo": 16.5, "variante": "Familiare" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Pizze Dessert",
+            "prodotto": "Black and White",
+            "ingredienti": "crema al cioccolato bianco, oreo frantumati, zucchero a velo, caramello",
+            "prezzi": [ { "prezzo": 8.0, "variante": "Personale" }, { "prezzo": 16.5, "variante": "Familiare" } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "COCA-COLA Original Taste PET 1,5 L",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 3.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Sprite PET 1,5 L",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 3.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Sprite Sleek Can 330 ml",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Coca-Cola Sleek 33cl",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Acqua Naturale 50cl",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 1.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Bibita in Lattina 33cl Chinotto",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Bibita in Lattina 33cl Tè al Limone",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Bibita in Lattina 33cl Tè alla Pesca",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Bevande",
+            "prodotto": "Fanta Original Sleek 33 cl",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 2.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Birre",
+            "prodotto": "Birra 33cl Heineken",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 3.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Birre",
+            "prodotto": "Birra 33cl Ceres",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 4.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Birre",
+            "prodotto": "Birra 33cl Ichnusa",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 4.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Birre",
+            "prodotto": "Birra 33cl Beck's 33cl",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 3.0 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Birre",
+            "prodotto": "Heineken 66cl",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 3.5 } ],
+            "scelte_obbligatorie": {}
+          },
+          {
+            "categoria": "Birre",
+            "prodotto": "Moretti 66cl",
+            "ingredienti": "",
+            "prezzi": [ { "prezzo": 3.5 } ],
+            "scelte_obbligatorie": {}
+          }
         ];
 
+        let menuData = [];
         let cart = {};
         let itemMap = {};
-        let currentModalState = { itemId: null, selections: {} };
+        let rawItemsList = [];
+        let currentModalState = { itemId: null, selections: {}, removals: {} };
 
-        function buildItemMap() {
-            menuData.forEach(cat => cat.items.forEach(i => {
-                i.categoryId = cat.id; 
-                itemMap[i.id] = i;
-            }));
+        function buildMenuData() {
+            let catMap = {};
+            let currentId = 1;
+
+            rawMenuData.forEach(rj => {
+                if (!catMap[rj.categoria]) {
+                    catMap[rj.categoria] = {
+                        id: rj.categoria.toLowerCase().replace(/[\s\']/g, '-'),
+                        category: rj.categoria,
+                        items: []
+                    };
+                    menuData.push(catMap[rj.categoria]);
+                }
+                
+                let parsedIngredients = [];
+                if(rj.ingredienti) {
+                    let cleaned = rj.ingredienti.replace(/in uscita[:]?/gi, '').replace(/all['’]uscita[:]?/gi, '');
+                    parsedIngredients = cleaned.split(/[,;]+/).map(s => s.trim()).filter(s => s.length > 2);
+                }
+
+                let itm = {
+                    id: currentId++,
+                    categoryName: rj.categoria,
+                    name: rj.prodotto,
+                    desc: rj.ingredienti,
+                    ingredientsList: parsedIngredients,
+                    prezzi: rj.prezzi,
+                    price: rj.prezzi[0].prezzo,
+                    scelte_obbligatorie: rj.scelte_obbligatorie || {}
+                };
+
+                catMap[rj.categoria].items.push(itm);
+                itemMap[itm.id] = itm;
+                rawItemsList.push(itm);
+            });
         }
 
         function initApp() { 
-            buildItemMap();
+            buildMenuData();
             renderFilters(); 
             renderMenu(); 
         }
@@ -590,10 +2171,10 @@
                 sectionDiv.innerHTML = `<h2 class="category-title">${category.category}</h2>`;
                 category.items.forEach(item => {
                     
-                    let isPizza = item.categoryName.toLowerCase().includes('pizz') && item.categoryName !== 'Pizze Senza Glutine';
-                    let isBurger = item.categoryName.toLowerCase().includes('burger');
+                    let hasVariants = item.prezzi.length > 1;
+                    let hasMandatory = Object.keys(item.scelte_obbligatorie).length > 0;
                     
-                    let displayPrice = (isPizza || isBurger) ? `da ${item.price.toFixed(2).replace('.',',')}€` : `${item.price.toFixed(2).replace('.',',')}€`;
+                    let displayPrice = (hasVariants || hasMandatory) ? `da ${item.price.toFixed(2).replace('.',',')}€` : `${item.price.toFixed(2).replace('.',',')}€`;
 
                     sectionDiv.innerHTML += `
                         <div class="menu-item">
@@ -616,36 +2197,42 @@
 
         function handleAddClick(id) {
             const item = itemMap[id];
-            let catName = item.categoryName.toLowerCase();
+            let hasVariants = item.prezzi.length > 1;
+            let hasMandatory = Object.keys(item.scelte_obbligatorie).length > 0;
+            let hasRemovals = item.ingredientsList.length > 0;
             
-            if (catName.includes('pizz') || catName.includes('burger')) {
+            if (hasVariants || hasMandatory || hasRemovals) {
                 openCustomModal(id);
             } else {
                 updateQty(id, 1);
             }
         }
+        
+        function handleUpsellClick(id) {
+            const item = itemMap[id];
+            let hasVariants = item.prezzi.length > 1;
+            let hasMandatory = Object.keys(item.scelte_obbligatorie).length > 0;
+            let hasRemovals = item.ingredientsList.length > 0;
+            
+            if (hasVariants || hasMandatory || hasRemovals) {
+                closeCheckout();
+                openCustomModal(id);
+            } else {
+                updateQty(id, 1); 
+                renderUpsell();   
+            }
+        }
 
         function handleRemoveClick(id) {
-            const item = itemMap[id];
             let baseCount = cart[id] || 0;
             let variantsInCart = Object.keys(cart).filter(k => k.startsWith('c_' + id + '_') && cart[k] > 0);
             
-            let isPizzaOrBurger = item.categoryName.toLowerCase().includes('pizz') || item.categoryName.toLowerCase().includes('burger');
-            
-            if (isPizzaOrBurger) {
-                if (variantsInCart.length === 1) {
-                    updateQty(variantsInCart[0], -1);
-                } else if (variantsInCart.length > 1) {
-                    alert("Hai diverse varianti nel carrello. Usa i tasti '-' delle singole varianti qui sotto per rimuoverle.");
-                }
-            } else {
-                if (baseCount > 0) {
-                    updateQty(id, -1);
-                } else if (variantsInCart.length === 1) {
-                    updateQty(variantsInCart[0], -1);
-                } else if (variantsInCart.length > 1) {
-                    alert("Hai diverse varianti nel carrello. Usa i tasti '-' delle singole varianti qui sotto.");
-                }
+            if (variantsInCart.length === 1 && baseCount === 0) {
+                updateQty(variantsInCart[0], -1);
+            } else if (variantsInCart.length > 0) {
+                alert("Hai diverse personalizzazioni nel carrello. Usa i tasti '-' delle singole varianti qui sotto per rimuoverle.");
+            } else if (baseCount > 0) {
+                updateQty(id, -1);
             }
         }
 
@@ -655,12 +2242,9 @@
             
             currentModalState = {
                 itemId: id,
-                selections: {}
+                selections: {},
+                removals: {}
             };
-
-            if (item.categoryName === 'Pizze Senza Glutine') {
-                currentModalState.selections['impasto'] = 'Senza Glutine';
-            }
 
             renderModalContent();
             document.getElementById('custom-modal').classList.add('active');
@@ -671,58 +2255,47 @@
             const container = document.getElementById('custom-dynamic-sections');
             let html = '';
 
-            let isPizza = item.categoryName.toLowerCase().includes('pizz');
-            let isSenzaGlutine = item.categoryName === 'Pizze Senza Glutine';
-            let isBurger = item.categoryName.toLowerCase().includes('burger');
-
-            if (isPizza && !isSenzaGlutine) {
-                html += `<div class="custom-section-title">Variante <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
-                [{name: 'Normale', price: 0}, {name: 'Maxi', price: 5.00}].forEach(opt => {
-                    const isChecked = currentModalState.selections['variante'] === opt.name ? 'checked' : '';
-                    let pText = opt.price > 0 ? `+${opt.price.toFixed(2)}€` : '+0.00€';
+            if (item.prezzi.length > 1) {
+                html += `<div class="custom-section-title">Formato / Impasto <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
+                item.prezzi.forEach(opt => {
+                    const isChecked = currentModalState.selections['variante'] === opt.variante ? 'checked' : '';
                     html += `
                         <label class="custom-option-card ${isChecked ? 'selected' : ''}">
                             <div class="custom-option-left">
-                                <input type="radio" name="variante" value="${opt.name}" ${isChecked} onchange="updateModalState('variante', '${opt.name}')"> ${opt.name}
+                                <input type="radio" name="variante" value="${opt.variante}" ${isChecked} onchange="updateModalState('variante', '${opt.variante}')"> ${opt.variante}
                             </div>
-                            <span class="custom-price">${pText}</span>
+                            <span class="custom-price">${opt.prezzo.toFixed(2).replace('.',',')}€</span>
                         </label>`;
                 });
                 html += `</div>`;
             }
 
-            if (isPizza && !isSenzaGlutine && currentModalState.selections['variante']) {
-                html += `<div class="custom-section-title">Scegli l'Impasto <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
-                let impasti = [{name: 'Impasto Classico', price: 0}];
-                
-                if (currentModalState.selections['variante'] === 'Normale') {
-                    impasti.push({name: 'Integrale ai semi misti', price: 2.00});
-                    impasti.push({name: 'Bordo Ripieno Classico', price: 2.50});
-                    impasti.push({name: 'Senza Glutine', price: 3.00});
+            if (Object.keys(item.scelte_obbligatorie).length > 0) {
+                for (let gruppo in item.scelte_obbligatorie) {
+                    html += `<div class="custom-section-title">${gruppo} <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
+                    item.scelte_obbligatorie[gruppo].forEach(opt => {
+                        const isChecked = currentModalState.selections[gruppo] === opt.valore ? 'checked' : '';
+                        let pText = opt.supplemento > 0 ? `+${opt.supplemento.toFixed(2)}€` : '';
+                        html += `
+                            <label class="custom-option-card ${isChecked ? 'selected' : ''}">
+                                <div class="custom-option-left">
+                                    <input type="radio" name="${gruppo}" value="${opt.valore}" ${isChecked} onchange="updateModalState('${gruppo}', '${opt.valore}')"> ${opt.valore}
+                                </div>
+                                <span class="custom-price">${pText}</span>
+                            </label>`;
+                    });
+                    html += `</div>`;
                 }
-
-                impasti.forEach(opt => {
-                    const isChecked = currentModalState.selections['impasto'] === opt.name ? 'checked' : '';
-                    let pText = opt.price > 0 ? `+${opt.price.toFixed(2)}€` : '+0.00€';
-                    html += `
-                        <label class="custom-option-card ${isChecked ? 'selected' : ''}">
-                            <div class="custom-option-left">
-                                <input type="radio" name="impasto" value="${opt.name}" ${isChecked} onchange="updateModalState('impasto', '${opt.name}')"> ${opt.name}
-                            </div>
-                            <span class="custom-price">${pText}</span>
-                        </label>`;
-                });
-                html += `</div>`;
             }
 
-            if (isBurger) {
-                html += `<div class="custom-section-title">Cottura Carne <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
-                [{name: 'Ben Cotta'}, {name: 'Media'}, {name: 'Al Sangue'}].forEach(opt => {
-                    const isChecked = currentModalState.selections['cottura'] === opt.name ? 'checked' : '';
+            if (item.ingredientsList.length > 0) {
+                html += `<div class="custom-section-title">Rimuovi Ingredienti <span class="badge-opt">Gratis</span></div><div class="custom-group">`;
+                item.ingredientsList.forEach(ingr => {
+                    const isChecked = currentModalState.removals[ingr] ? 'checked' : '';
                     html += `
-                        <label class="custom-option-card ${isChecked ? 'selected' : ''}">
+                        <label class="custom-option-card opt-removal ${isChecked ? 'selected' : ''}">
                             <div class="custom-option-left">
-                                <input type="radio" name="cottura" value="${opt.name}" ${isChecked} onchange="updateModalState('cottura', '${opt.name}')"> ${opt.name}
+                                <input type="checkbox" ${isChecked} onchange="toggleRemoval('${ingr}')"> Senza: ${ingr}
                             </div>
                         </label>`;
                 });
@@ -735,37 +2308,43 @@
 
         function updateModalState(groupName, value) {
             currentModalState.selections[groupName] = value;
-            
-            if (groupName === 'variante' && value === 'Maxi' && currentModalState.selections['impasto'] && currentModalState.selections['impasto'] !== 'Impasto Classico') {
-                currentModalState.selections['impasto'] = null;
-            }
-            
             renderModalContent(); 
+        }
+
+        function toggleRemoval(ingr) {
+            if (currentModalState.removals[ingr]) {
+                delete currentModalState.removals[ingr];
+            } else {
+                currentModalState.removals[ingr] = true;
+            }
+            renderModalContent();
         }
 
         function validateAndCalculatePrice() {
             const item = itemMap[currentModalState.itemId];
-            let isPizza = item.categoryName.toLowerCase().includes('pizz');
-            let isSenzaGlutine = item.categoryName === 'Pizze Senza Glutine';
-            let isBurger = item.categoryName.toLowerCase().includes('burger');
-            
+            let basePrice = item.price;
             let extraPrice = 0;
             let isValid = true;
 
-            if (isPizza && !isSenzaGlutine) {
-                if (!currentModalState.selections['variante']) isValid = false;
-                if (!currentModalState.selections['impasto']) isValid = false;
-            }
-            if (isBurger) {
-                if (!currentModalState.selections['cottura']) isValid = false;
+            if (item.prezzi.length > 1) {
+                if (!currentModalState.selections['variante']) {
+                    isValid = false;
+                } else {
+                    let sc = item.prezzi.find(p => p.variante === currentModalState.selections['variante']);
+                    if(sc) basePrice = sc.prezzo;
+                }
             }
 
-            if (currentModalState.selections['variante'] === 'Maxi') extraPrice += 5.00;
-            if (currentModalState.selections['impasto'] === 'Bordo Ripieno Classico') extraPrice += 2.50;
-            if (currentModalState.selections['impasto'] === 'Integrale ai semi misti') extraPrice += 2.00;
-            if (currentModalState.selections['impasto'] === 'Senza Glutine' && !isSenzaGlutine) extraPrice += 3.00;
+            for (let gruppo in item.scelte_obbligatorie) {
+                if (!currentModalState.selections[gruppo]) {
+                    isValid = false;
+                } else {
+                    let sc = item.scelte_obbligatorie[gruppo].find(o => o.valore === currentModalState.selections[gruppo]);
+                    if(sc) extraPrice += sc.supplemento;
+                }
+            }
 
-            let newPrice = item.price + extraPrice;
+            let newPrice = basePrice + extraPrice;
             const btn = document.getElementById('btn-add-custom');
             
             if (!isValid) {
@@ -779,29 +2358,33 @@
 
         function closeCustomModal() {
             document.getElementById('custom-modal').classList.remove('active');
-            currentModalState = { itemId: null, selections: {} };
+            currentModalState = { itemId: null, selections: {}, removals: {} };
         }
 
         function addCustomItemToCart() {
             const item = itemMap[currentModalState.itemId];
+            let basePrice = item.price;
             let extraPrice = 0;
             let customParts = [];
             
-            let isSenzaGlutine = item.categoryName === 'Pizze Senza Glutine';
+            if (item.prezzi.length > 1) {
+                let sc = item.prezzi.find(p => p.variante === currentModalState.selections['variante']);
+                if(sc) { basePrice = sc.prezzo; customParts.push(sc.variante); }
+            }
 
-            if (currentModalState.selections['variante'] && currentModalState.selections['variante'] !== 'Normale') {
-                customParts.push(currentModalState.selections['variante']);
-                extraPrice += 5.00;
+            for (let gruppo in item.scelte_obbligatorie) {
+                let sel = currentModalState.selections[gruppo];
+                let sc = item.scelte_obbligatorie[gruppo].find(o => o.valore === sel);
+                if(sc) { 
+                    extraPrice += sc.supplemento; 
+                    customParts.push(`${gruppo}: ${sel}`); 
+                }
             }
-            if (currentModalState.selections['impasto'] && currentModalState.selections['impasto'] !== 'Impasto Classico') {
-                if(!isSenzaGlutine) customParts.push(currentModalState.selections['impasto']);
-                
-                if (currentModalState.selections['impasto'] === 'Bordo Ripieno Classico') extraPrice += 2.50;
-                if (currentModalState.selections['impasto'] === 'Integrale ai semi misti') extraPrice += 2.00;
-                if (currentModalState.selections['impasto'] === 'Senza Glutine' && !isSenzaGlutine) extraPrice += 3.00;
-            }
-            if (currentModalState.selections['cottura']) {
-                customParts.push(currentModalState.selections['cottura']);
+
+            for (let ingr in currentModalState.removals) {
+                if (currentModalState.removals[ingr]) {
+                    customParts.push(`SENZA: ${ingr}`);
+                }
             }
 
             if (customParts.length === 0) {
@@ -810,7 +2393,7 @@
                 return;
             }
 
-            let newPrice = item.price + extraPrice;
+            let newPrice = basePrice + extraPrice;
             let signature = `${item.id}|${customParts.sort().join('|')}`;
             
             let hash = 0; 
@@ -820,7 +2403,7 @@
             if (!itemMap[customId]) {
                 itemMap[customId] = { 
                     id: customId, baseId: item.id, name: item.name, price: newPrice, isCustom: true, 
-                    customParts: customParts
+                    customParts: customParts, categoryName: item.categoryName 
                 };
                 
                 let variantHtml = `
@@ -858,7 +2441,6 @@
                 }
                 let qtySpan = document.getElementById(`qty-${itemId}`);
                 if(qtySpan) qtySpan.innerText = cart[itemId];
-                
                 updateBaseItemQty(itemMap[itemId].baseId);
             } else {
                 let qtySpan = document.getElementById(`qty-${itemId}`);
@@ -889,11 +2471,9 @@
                 }
             }
 
-            // CALCOLO SCONTO DEL 10%
             let sconto = total * 0.10;
             let finalTotal = total - sconto;
 
-            // Aggiorna Carrello Footer (con prezzo barrato e nuovo prezzo)
             let priceHtml = "0,00 €";
             if (total > 0) {
                 priceHtml = `
@@ -906,8 +2486,8 @@
             const footer = document.getElementById('cart-footer');
             if (totalItems > 0) footer.classList.add('visible'); else footer.classList.remove('visible');
 
-            // Aggiorna riepilogo nel checkout
             updateCheckoutSummary(total, sconto, finalTotal);
+            renderCartSummary(); 
         }
 
         function updateCheckoutSummary(subtotale, sconto, totaleFinale) {
@@ -924,6 +2504,118 @@
                     summaryContainer.style.display = 'none';
                 }
             }
+        }
+
+        function renderCartSummary() {
+            const container = document.getElementById('cart-items-summary');
+            if(!container) return;
+            
+            let html = '<h4 class="cart-summary-title">Cosa stai ordinando:</h4>';
+            let hasItems = false;
+            
+            for(let id in cart) {
+                if (cart[id] > 0 && itemMap[id]) {
+                    hasItems = true;
+                    let item = itemMap[id];
+                    let lineTotal = item.price * cart[id];
+                    let customTesto = "";
+                    if(item.isCustom && item.customParts && item.customParts.length > 0) {
+                        customTesto = `<div style="font-size:0.75rem; color:var(--text-muted); margin-top:3px; line-height:1.3;">↳ ${item.customParts.join('<br>↳ ')}</div>`;
+                    }
+                    
+                    html += `
+                        <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.95rem; font-weight:600; color:var(--text-dark);">
+                            <div style="flex:1; padding-right:10px;">
+                                <span><strong style="color:var(--accent-main); font-size:1.05rem;">${cart[id]}x</strong> ${item.name}</span>
+                                ${customTesto}
+                            </div>
+                            <div style="font-weight:800; color:var(--text-dark);">${lineTotal.toFixed(2).replace('.',',')} €</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            if(!hasItems) {
+                html += '<p style="font-size:0.85rem; color:var(--text-muted);">Il carrello è vuoto.</p>';
+            }
+            container.innerHTML = html;
+        }
+
+        function renderUpsell() {
+            const upsellContainer = document.getElementById('upsell-container');
+            const cartItemsIds = [];
+            let hasDrinks = false;
+            let hasAppetizers = false;
+            let hasDessert = false;
+
+            for(let id in cart) {
+                if(cart[id] > 0 && itemMap[id]) {
+                    let baseId = itemMap[id].baseId || itemMap[id].id;
+                    cartItemsIds.push(baseId);
+                    
+                    let cat = (itemMap[baseId].categoryName || "").toLowerCase();
+                    if(cat.includes('bevande') || cat.includes('birre')) hasDrinks = true;
+                    if(cat.includes('appetizer') || cat.includes('specialit')) hasAppetizers = true;
+                    if(cat.includes('dessert')) hasDessert = true;
+                }
+            }
+
+            let candidates = [];
+            
+            rawItemsList.forEach(item => {
+                if(cartItemsIds.includes(item.id)) return;
+                let c = item.categoryName.toLowerCase();
+                
+                if(!hasDrinks && (c.includes('bevande') || c.includes('birre'))) {
+                    candidates.push(item);
+                } 
+                else if(hasDrinks && !hasAppetizers && (c.includes('appetizer') || c.includes('specialit'))) {
+                    candidates.push(item);
+                }
+                else if(hasDrinks && hasAppetizers && !hasDessert && c.includes('dessert')) {
+                    candidates.push(item);
+                }
+            });
+
+            if (candidates.length < 3) {
+                rawItemsList.forEach(item => {
+                    if(cartItemsIds.includes(item.id) || candidates.includes(item)) return;
+                    let c = item.categoryName.toLowerCase();
+                    if(c.includes('bevande') || c.includes('dessert') || c.includes('appetizer') || c.includes('birre')) {
+                        candidates.push(item);
+                    }
+                });
+            }
+
+            candidates = candidates.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            if(candidates.length === 0) {
+                upsellContainer.innerHTML = '';
+                return;
+            }
+
+            let titleText = !hasDrinks ? "Hai dimenticato da bere?" : "Completa il tuo ordine al volo!";
+            
+            let html = `
+                <div class="upsell-section">
+                    <div class="upsell-title"><i class="fa-solid fa-bolt"></i> ${titleText}</div>
+                    <div class="upsell-scroller">
+            `;
+
+            candidates.forEach(c => {
+                html += `
+                    <div class="upsell-card">
+                        <div>
+                            <div class="upsell-name">${c.name}</div>
+                            <div class="upsell-price">+${c.price.toFixed(2).replace('.',',')} €</div>
+                        </div>
+                        <button class="upsell-btn" type="button" onclick="handleUpsellClick(${c.id});"><i class="fa-solid fa-plus"></i> Aggiungi</button>
+                    </div>
+                `;
+            });
+
+            html += `</div></div>`;
+            upsellContainer.innerHTML = html;
         }
 
         function popolaOrari() {
@@ -982,8 +2674,8 @@
         function openCheckout() { 
             document.getElementById('checkout-modal').classList.add('active'); 
             popolaOrari();
-            // Forza aggiornamento riepilogo prezzi quando si apre il modale
             updateCartUI(); 
+            renderUpsell(); 
         }
 
         function closeCheckout() {
@@ -1043,14 +2735,13 @@
                     
                     let customTesto = "";
                     if(item.isCustom && item.customParts) {
-                        customTesto += `%0A   ↳ ${item.customParts.join(' | ')}`;
+                        customTesto += `%0A   ↳ ${item.customParts.join('%0A   ↳ ')}`;
                     }
                     
                     text += `▫️ ${cart[id]}x ${item.name} (${lineTotal.toFixed(2)}€)${customTesto}%0A`;
                 }
             }
 
-            // Calcolo Sconto e Prezzo Finale per WhatsApp / Nexi
             let sconto = total * 0.10;
             let finalTotal = total - sconto;
 
@@ -1076,7 +2767,6 @@
             btn.disabled = true;
 
             try {
-                // Passiamo finalTotal (il prezzo scontato) al gateway Nexi
                 const response = await fetch("/paga", {
                     method: 'POST', 
                     headers: { 'Content-Type': 'application/json' },
