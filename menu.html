@@ -60,8 +60,9 @@
         .variant-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px; line-height: 1.4; font-weight: 600;}
         .variant-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; color: var(--text-dark); font-weight: 700; margin-bottom: 5px;}
 
-        /* MODALE PERSONALIZZAZIONE */
+        /* MODALE PERSONALIZZAZIONE (STILE OPZIONI) */
         .custom-section-title { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--text-dark); margin: 25px 0 10px; font-size: 1.1rem; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--border-light); padding-bottom: 5px;}
+        .custom-section-title:first-child { margin-top: 0; }
         .badge-req { font-size: 0.65rem; background: var(--text-dark); color: #fff; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; font-weight: 700;}
         .badge-opt { font-size: 0.65rem; background: var(--success); color: #fff; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; font-weight: 700;}
         
@@ -91,16 +92,19 @@
 
         .btn-checkout { background: var(--accent-main); color: #ffffff; border: none; padding: 14px 24px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 8px; cursor: pointer; text-transform: uppercase; font-family: 'Montserrat', sans-serif; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);}
 
-        /* MODALI */
+        /* MODALI LAYOUT CORRETTO (FLEX COLONNA CON FOOTER FISSO) */
         .checkout-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 15px; }
         .checkout-modal.active { display: flex; }
-        .checkout-content { background: var(--bg-main); border-radius: 16px; width: 100%; max-width: 500px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3); display: flex; flex-direction: column;}
         
-        .modal-header { padding: 20px 25px; background: #ffffff; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10;}
-        .modal-header h3 { font-family: 'Montserrat', sans-serif; color: var(--text-dark); margin: 0; font-weight: 900; font-size: 1.3rem; text-transform: uppercase;}
+        .checkout-content { background: var(--bg-main); border-radius: 16px; width: 100%; max-width: 500px; max-height: 85vh; display: flex; flex-direction: column; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.3); overflow: hidden;}
+        
+        .modal-header { padding: 15px 20px; background: #ffffff; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;}
+        .modal-header h3 { font-family: 'Montserrat', sans-serif; color: var(--text-dark); margin: 0; font-weight: 900; font-size: 1.2rem; text-transform: uppercase;}
         .close-modal { color: var(--text-muted); font-size: 1.6rem; cursor: pointer; padding: 5px;}
         
-        .modal-body { padding: 20px 25px; }
+        .modal-body { padding: 15px 20px; overflow-y: auto; flex-grow: 1; -webkit-overflow-scrolling: touch;}
+        
+        .modal-footer { padding: 15px 20px; background: #ffffff; border-top: 1px solid var(--border-light); flex-shrink: 0;}
 
         .type-toggle { display: flex; gap: 10px; margin-bottom: 20px; background: #ffffff; padding: 5px; border-radius: 10px; border: 1px solid var(--border-light);}
         .type-toggle label { flex: 1; text-align: center; padding: 12px; border-radius: 8px; cursor: pointer; color: var(--text-muted); font-weight: 600; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase;}
@@ -112,21 +116,44 @@
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border-radius: 8px; background: #ffffff; border: 1px solid var(--border-light); color: var(--text-dark); outline: none; font-size: 1rem; appearance: none; -webkit-appearance: none; font-family: 'Poppins', sans-serif; font-weight: 500;}
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent-main); box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);}
         
+        /* AUTOCOMPLETE ELENCO VIE */
+        .autocomplete-wrapper { position: relative; display: block; }
+        .autocomplete-items { position: absolute; border: 1px solid var(--border-light); border-radius: 8px; z-index: 9999; top: 100%; left: 0; right: 0; overflow-y: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.15); max-height: 200px; background: #fff; margin-top: 5px;}
+        .autocomplete-items div { padding: 12px; cursor: pointer; border-bottom: 1px solid var(--border-light); font-size: 0.9rem; color: var(--text-dark); }
+        .autocomplete-items div:last-child { border-bottom: none; }
+        .autocomplete-items div:hover { background-color: rgba(211, 47, 47, 0.05); color: var(--accent-main); }
+
         /* CART SUMMARY IN MODAL */
         .cart-summary-box { margin-bottom: 20px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid var(--border-light); }
         .cart-summary-title { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-dark); margin-bottom: 15px; border-bottom: 2px solid var(--border-light); padding-bottom: 8px;}
         
-        /* UPSELL SECTION MODIFICATA: SENZA SCROLL, 3 COLONNE FLUIDE */
-        .upsell-section { background: rgba(211, 47, 47, 0.04); border: 1px dashed var(--accent-main); border-radius: 12px; padding: 15px; margin-bottom: 20px; }
-        .upsell-title { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--accent-main); margin-bottom: 12px; text-transform: uppercase; }
+        /* UPSELL SECTION MODIFICATA: MOBILE A COLONNA, DESKTOP IN RIGA (NIENTE SCROLL) */
+        .upsell-section { background: rgba(211, 47, 47, 0.03); border: 1px dashed var(--accent-main); border-radius: 12px; padding: 15px; margin-bottom: 20px; }
+        .upsell-title { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--accent-main); margin-bottom: 12px; text-transform: uppercase; text-align: center;}
         
-        .upsell-scroller { display: flex; gap: 8px; justify-content: space-between; padding-bottom: 0;}
+        .upsell-scroller { 
+            display: flex; 
+            flex-direction: column; /* MOBILE UNO SOTTO L'ALTRO */
+            gap: 10px; 
+        }
         
-        .upsell-card { flex: 1; min-width: 0; background: #fff; border: 1px solid var(--border-light); border-radius: 10px; padding: 10px 6px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 3px 8px rgba(0,0,0,0.04);}
-        .upsell-name { font-size: 0.75rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; line-height: 1.2; word-wrap: break-word;}
-        .upsell-price { font-size: 0.85rem; font-weight: 800; color: var(--accent-main); margin-bottom: 8px;}
-        .upsell-btn { width: 100%; background: #fff; color: var(--accent-main); border: 2px solid var(--accent-main); padding: 6px 2px; border-radius: 8px; font-size: 0.7rem; font-weight: 800; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif;}
-        .upsell-btn:active { background: var(--accent-main); color: #fff; }
+        .upsell-card { 
+            background: #fff; 
+            border: 1px solid var(--border-light); 
+            border-radius: 10px; 
+            padding: 12px; 
+            display: flex; 
+            flex-direction: row; /* Info a sx, Bottone a dx */
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+            text-align: left;
+        }
+        .upsell-card-info { flex: 1; padding-right: 10px; }
+        .upsell-name { font-size: 0.85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; line-height: 1.2; }
+        .upsell-price { font-size: 0.9rem; font-weight: 800; color: var(--accent-main); }
+        .upsell-btn { white-space: nowrap; background: rgba(211, 47, 47, 0.1); color: var(--accent-main); border: none; padding: 8px 15px; border-radius: 8px; font-size: 0.8rem; font-weight: 800; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif; }
+        .upsell-btn:active { background: var(--accent-main); color: #fff; transform: scale(0.95); }
 
         .btn-confirm-order { width: 100%; background: var(--accent-main); color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: 800; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; transition: opacity 0.3s, background 0.3s;}
         .btn-confirm-order:disabled { background: #ced4da; cursor: not-allowed; color: #fff; box-shadow: none;}
@@ -139,6 +166,12 @@
             .category-title { grid-column: span 2; text-align: center; margin-top: 20px; font-size: 2rem; }
             .menu-item { margin: 0; height: 100%; }
             .cart-footer { justify-content: center; gap: 50px; padding: 20px 0; }
+            
+            /* SU PC TORNANO IN RIGA */
+            .upsell-scroller { flex-direction: row; }
+            .upsell-card { flex: 1; flex-direction: column; text-align: center; }
+            .upsell-card-info { padding-right: 0; margin-bottom: 10px; }
+            .upsell-btn { width: 100%; }
         }
     </style>
 </head>
@@ -201,13 +234,27 @@
                 </div>
 
                 <div id="delivery-fields" style="display: none;">
-                    <div class="form-group">
-                        <label>Indirizzo (Via, Civico, Info) *</label>
-                        <input type="text" id="cust-address" placeholder="Es. Via Roma 10, Citofono Rossi">
+                    <div style="display: flex; gap: 10px;">
+                        <div class="form-group autocomplete-wrapper" style="flex: 2;">
+                            <label>Indirizzo (Solo Via) *</label>
+                            <input type="text" id="cust-address" placeholder="Es. Via Roma" autocomplete="off" oninput="handleAddressInput(this)">
+                            <div id="address-suggestions" class="autocomplete-items"></div>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Comune *</label>
+                            <select id="cust-city" style="padding: 13px;">
+                                <option value="Bagheria">Bagheria</option>
+                                <option value="Aspra">Aspra</option>
+                                <option value="Santa Flavia">Santa Flavia</option>
+                                <option value="Porticello">Porticello</option>
+                                <option value="Sant'Elia">Sant'Elia</option>
+                                <option value="Ficarazzi">Ficarazzi</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group"><label>Note Aggiuntive per la cucina</label><textarea id="cust-notes" rows="2" placeholder="Es. Allergie, intolleranze..."></textarea></div>
+                <div class="form-group"><label>Note Aggiuntive per la cucina</label><textarea id="cust-notes" rows="2" placeholder="Es. Allergie, intolleranze, o numero civico..."></textarea></div>
 
                 <div id="order-summary-breakdown" class="summary-breakdown"></div>
 
@@ -218,7 +265,9 @@
                         <option value="carta">💳 Carta di Credito (Nexi)</option>
                     </select>
                 </div>
-				
+            </div>
+            
+            <div class="modal-footer">
                 <button class="btn-confirm-order" onclick="sendOrderWithDetails()" id="pay-btn" style="background: #28a745; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
                     <i class="fa-solid fa-check-to-slot"></i> Conferma Ordine
                 </button>
@@ -235,7 +284,7 @@
             
             <div class="modal-body" id="custom-dynamic-sections"></div>
             
-            <div style="padding: 20px; background: #ffffff; border-top: 1px solid var(--border-light); position: sticky; bottom: 0;">
+            <div class="modal-footer">
                 <button class="btn-confirm-order" onclick="addCustomItemToCart()" id="btn-add-custom" disabled>
                     <i class="fa-solid fa-triangle-exclamation"></i> Scegli le opzioni
                 </button>
@@ -254,6 +303,16 @@
 </form>
 
     <script>
+        // DATABASE INDIRIZZI
+        const databaseVie = [
+            "Via Palmiro Togliatti", "Corso Umberto I", "Corso Butera", "Via Roma", "Via Dante", "Via Libertà", "Via Papa Giovanni XXIII", "Via Mattarella", "Via Città di Palermo", "Via Passo del Carretto", "Via Consolare", "Via Federico II", "Via Ramacca", "Via Lo Re", "Via del Cavaliere", "Via Ciro Scianna", "Via Roccaforte", "Via Angiò", "Via Guttuso", "Via Derelitto", "Via Lanza", "Via Morana", "Via Carà", "Via Trabia", "Via D. Scarlatti", "Via B. Mattarella",
+            "Via Francesco Tempra", "Corso Italia", "Via F. Perez", "Via D'Amato", "Via Andrea Scordato", "Via Concordia Mediterranea", "Via Cotogni", "Viale Sant'Isidoro", "Via dei Cipressi",
+            "Via San Marco", "Corso Vittorio Emanuele", "Via Duca Sperlinga", "Via Campanella", "Via Pezzingoli", "Contrada Bellacera",
+            "Via Vittorio Agostino", "Via Oliveto", "Via Lo Coco", "Via Piano Stenditore", "Via P. D'Amato",
+            "Largo Trizzanò", "Via Bellante", "Via Torre", "Via Saverio Scaduto",
+            "Via Marco Polo", "Via Calabrese", "Via San Martino", "Via Padre M. Kolbe", "Via Restivo", "Via Caduti di Via Fani"
+        ];
+
         const rawMenuData = [
           {
             "categoria": "Pizze",
@@ -2144,6 +2203,13 @@
             buildMenuData();
             renderFilters(); 
             renderMenu(); 
+            
+            document.addEventListener('click', function(e) {
+                if(e.target.id !== 'cust-address') {
+                    let container = document.getElementById('address-suggestions');
+                    if(container) container.innerHTML = '';
+                }
+            });
         }
 
         function renderFilters() {
@@ -2215,7 +2281,6 @@
             let hasRemovals = item.ingredientsList.length > 0;
             
             if (hasVariants || hasMandatory || hasRemovals) {
-                closeCheckout();
                 openCustomModal(id);
             } else {
                 updateQty(id, 1); 
@@ -2253,16 +2318,20 @@
         function renderModalContent() {
             const item = itemMap[currentModalState.itemId];
             const container = document.getElementById('custom-dynamic-sections');
+            const modalBody = document.querySelector('#custom-modal .modal-body');
+            
+            let scrollPos = modalBody ? modalBody.scrollTop : 0;
             let html = '';
 
             if (item.prezzi.length > 1) {
                 html += `<div class="custom-section-title">Formato / Impasto <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
                 item.prezzi.forEach(opt => {
                     const isChecked = currentModalState.selections['variante'] === opt.variante ? 'checked' : '';
+                    let safeVariante = opt.variante.replace(/"/g, '&quot;');
                     html += `
                         <label class="custom-option-card ${isChecked ? 'selected' : ''}">
                             <div class="custom-option-left">
-                                <input type="radio" name="variante" value="${opt.variante}" ${isChecked} onchange="updateModalState('variante', '${opt.variante}')"> ${opt.variante}
+                                <input type="radio" name="variante" value="${safeVariante}" ${isChecked} onchange="updateModalState(this.name, this.value)"> ${opt.variante}
                             </div>
                             <span class="custom-price">${opt.prezzo.toFixed(2).replace('.',',')}€</span>
                         </label>`;
@@ -2272,14 +2341,17 @@
 
             if (Object.keys(item.scelte_obbligatorie).length > 0) {
                 for (let gruppo in item.scelte_obbligatorie) {
+                    let safeGruppo = gruppo.replace(/"/g, '&quot;');
                     html += `<div class="custom-section-title">${gruppo} <span class="badge-req">Obbligatorio</span></div><div class="custom-group">`;
                     item.scelte_obbligatorie[gruppo].forEach(opt => {
                         const isChecked = currentModalState.selections[gruppo] === opt.valore ? 'checked' : '';
                         let pText = opt.supplemento > 0 ? `+${opt.supplemento.toFixed(2)}€` : '';
+                        let safeValore = opt.valore.replace(/"/g, '&quot;');
+                        
                         html += `
                             <label class="custom-option-card ${isChecked ? 'selected' : ''}">
                                 <div class="custom-option-left">
-                                    <input type="radio" name="${gruppo}" value="${opt.valore}" ${isChecked} onchange="updateModalState('${gruppo}', '${opt.valore}')"> ${opt.valore}
+                                    <input type="radio" name="${safeGruppo}" value="${safeValore}" ${isChecked} onchange="updateModalState(this.name, this.value)"> ${opt.valore}
                                 </div>
                                 <span class="custom-price">${pText}</span>
                             </label>`;
@@ -2292,10 +2364,11 @@
                 html += `<div class="custom-section-title">Rimuovi Ingredienti <span class="badge-opt">Gratis</span></div><div class="custom-group">`;
                 item.ingredientsList.forEach(ingr => {
                     const isChecked = currentModalState.removals[ingr] ? 'checked' : '';
+                    let safeIngr = ingr.replace(/"/g, '&quot;');
                     html += `
                         <label class="custom-option-card opt-removal ${isChecked ? 'selected' : ''}">
                             <div class="custom-option-left">
-                                <input type="checkbox" ${isChecked} onchange="toggleRemoval('${ingr}')"> Senza: ${ingr}
+                                <input type="checkbox" value="${safeIngr}" ${isChecked} onchange="toggleRemoval(this.value)"> Senza: ${ingr}
                             </div>
                         </label>`;
                 });
@@ -2304,6 +2377,10 @@
 
             container.innerHTML = html;
             validateAndCalculatePrice();
+
+            if (modalBody) {
+                modalBody.scrollTop = scrollPos;
+            }
         }
 
         function updateModalState(groupName, value) {
@@ -2426,6 +2503,9 @@
 
             updateQty(customId, 1);
             closeCustomModal();
+            if(document.getElementById('checkout-modal').classList.contains('active')) {
+                renderUpsell();
+            }
         }
 
         function updateQty(itemId, change) {
@@ -2605,17 +2685,48 @@
             candidates.forEach(c => {
                 html += `
                     <div class="upsell-card">
-                        <div>
+                        <div class="upsell-card-info">
                             <div class="upsell-name">${c.name}</div>
                             <div class="upsell-price">+${c.price.toFixed(2).replace('.',',')} €</div>
                         </div>
-                        <button class="upsell-btn" type="button" onclick="handleUpsellClick(${c.id});"><i class="fa-solid fa-plus"></i> Aggiungi</button>
+                        <button class="upsell-btn" type="button" onclick="handleUpsellClick(${c.id});">AGGIUNGI</button>
                     </div>
                 `;
             });
 
             html += `</div></div>`;
             upsellContainer.innerHTML = html;
+        }
+
+        function handleAddressInput(inputElem) {
+            let val = inputElem.value;
+            let container = document.getElementById('address-suggestions');
+            container.innerHTML = '';
+            
+            if (!val) return;
+            
+            let escapedVal = val.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+            let matches = databaseVie.filter(s => s.toLowerCase().includes(val.toLowerCase()));
+            
+            matches.slice(0, 8).forEach(match => {
+                let div = document.createElement('div');
+                let regex = new RegExp(`(${escapedVal})`, "gi");
+                div.innerHTML = match.replace(regex, "<strong style='color:var(--accent-main);'>$1</strong>");
+                
+                div.addEventListener('mousedown', function(e) {
+                    e.preventDefault(); 
+                    inputElem.value = match;
+                    container.innerHTML = '';
+                    inputElem.focus();
+                });
+                container.appendChild(div);
+            });
+            
+            if (matches.length === 0) {
+                let div = document.createElement('div');
+                div.innerHTML = "<span style='color:var(--accent-main); font-weight:700;'>Nessuna via trovata.</span><br><span style='font-size:0.75rem; color:#888;'>Controlla di aver scritto bene.</span>";
+                container.appendChild(div);
+            }
         }
 
         function popolaOrari() {
@@ -2709,8 +2820,18 @@
             let deliveryInfo = "";
             if (orderType === 'delivery') {
                 const address = document.getElementById('cust-address').value.trim();
-                if(!address) { alert("Inserisci l'indirizzo di consegna."); return; }
-                deliveryInfo = `🛵 *Consegna a Domicilio*%0A📍 Indirizzo: ${address}%0A🕒 Orario Richiesto: ${orario}`;
+                const city = document.getElementById('cust-city').value;
+                if(!address) { alert("Inserisci la via e il numero civico."); return; }
+                
+                const validZones = ["bagheria", "aspra", "santa flavia", "porticello", "sant'elia", "sant’elia", "ficarazzi"];
+                let inZone = validZones.some(z => address.toLowerCase().includes(z));
+                if(!inZone) {
+                    alert("Attenzione: Inserisci l'indirizzo scegliendo la via suggerita dal menu a tendina.");
+                    document.getElementById('cust-address').focus();
+                    return;
+                }
+
+                deliveryInfo = `🛵 *Consegna a Domicilio*%0A📍 Indirizzo: ${address}, ${city}%0A🕒 Orario Richiesto: ${orario}`;
             } else {
                 deliveryInfo = `🛍️ *Ritiro al Locale*%0A🕒 Orario Richiesto: ${orario}`;
             }
